@@ -10,9 +10,11 @@ public class TriggerPushZone : MonoBehaviour
 
     void FixedUpdate()
     {
+        Vector3 direction = transform.right * worldDirection.x + transform.forward * worldDirection.z + transform.up * worldDirection.y;
+
         foreach (Rigidbody rb in rbs)
         {
-            rb.AddForce(transform.InverseTransformDirection(worldDirection) * pushForce * Time.deltaTime);
+            rb.AddForce(transform.InverseTransformDirection(direction) * pushForce * Time.deltaTime);
         }
     }
 
