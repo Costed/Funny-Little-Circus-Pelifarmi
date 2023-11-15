@@ -1,56 +1,44 @@
 using UnityEngine;
+using System;
 
-public class Door : MonoBehaviour, IInteractable
+public class Door : MonoBehaviour
 {
-    [SerializeField] KeyType requiredKey;
-
     Animator animator;
 
-    bool doorOpen;
+    IActivatable activatable;
+    StateRecorder recorder;
 
     void Awake()
     {
+        activatable = GetComponent<IActivatable>();
+        activatable.OnActivate += Activated;
+
         animator = GetComponent<Animator>();
+
+        recorder = new StateRecorder(transform);
+        recorder.OnStateLoad += LoadState;
     }
 
-    public void Interact()
+    void Activated()
     {
-        if (!doorOpen && GameManager.Singleton.KeyManager.HasKeyOfType(requiredKey)) OpenDoor();
+        recorder.RecordState(true);
+
+        OpenDoor();
+    }
+
+    void LoadState(bool newState)
+    {
+        if (newState) OpenDoor();
+        else CloseDoor();
     }
 
     void OpenDoor()
     {
         animator.Play("Door_Open");
-
-        doorOpen = true;
-        //animator.SetBool("DoorOpen", doorOpen);
     }
 
     void CloseDoor()
     {
         animator.Play("Door_Idle");
-        
-        doorOpen = false;
-        //animator.SetBool("DoorOpen", doorOpen);
-    }
-
-    /*void KeyCollected(KeyType type)
-    {
-        if (type == requiredKey) animator.Play("Door_Open");
-    }*/
-
-    void LoadCheckpoint()
-    {
-        if (!GameManager.Singleton.KeyManager.HasKeyOfType(requiredKey)) CloseDoor();
-    }
-
-    void OnEnable()
-    {
-        GameManager.Singleton.OnLoadCheckpoint += LoadCheckpoint;
-    }
-
-    void OnDisable()
-    {
-        GameManager.Singleton.OnLoadCheckpoint -= LoadCheckpoint;
     }
 }

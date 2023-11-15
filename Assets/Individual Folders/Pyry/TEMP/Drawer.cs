@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Drawer : MonoBehaviour, IInteractable
+public class Drawer : MonoBehaviour
 {
     Animator animator;
 
@@ -9,53 +9,67 @@ public class Drawer : MonoBehaviour, IInteractable
 
     bool animPlaying = false;
 
+    IActivatable activatable;
+    StateRecorder recorder;
+
     void Awake()
     {
+        activatable = GetComponent<IActivatable>();
+        activatable.OnActivate += Activated;
+
         animator = GetComponent<Animator>();
+
+        recorder = new StateRecorder(transform);
+        recorder.OnStateLoad += LoadState;
+    }
+
+    void Activated()
+    {
+        if (animPlaying) return;
+
+        ToggleState();
+        recorder.RecordState(open);
+    }
+
+    void LoadState(bool newState)
+    {
+        open = newState;
+
+        if (open) OpenDrawer();
+        else CloseDrawer(true);
     }
 
     [ContextMenu("Toggle")]
     public void ToggleState()
     {
-        if (animator == null) animator = GetComponent<Animator>();
-
         open = !open;
 
-        if (open) animator.Play("Drawer_Open");
-        else animator.Play("Drawer_Close");
+        if (open) OpenDrawer();
+        else CloseDrawer();
         
         StartCoroutine(AnimPlayingFlag());
-
-        //if (open) animator.CrossFade("Drawer_Open", 0.6f);
-        //else animator.CrossFade("Drawer_Close", 0.6f);
     }
 
-    WaitForSeconds wait = new WaitForSeconds(1);
+    void OpenDrawer()
+    {
+        animator.Play("Drawer_Open");
+    }
+
+    void CloseDrawer(bool instaClose = false)
+    {
+        if (instaClose) animator.Play("Drawer_Idle");
+        else animator.Play("Drawer_Close");
+    }
+
+    WaitForSeconds openWait = new WaitForSeconds(0.5f);
+    WaitForSeconds closeWait = new WaitForSeconds(0.25f);
     IEnumerator AnimPlayingFlag()
     {
         animPlaying = true;
-        yield return wait;
+
+        if (open) yield return openWait;
+        else yield return closeWait;
+        
         animPlaying = false;
-    }
-
-    public void Interact()
-    {
-        if (!animPlaying) ToggleState();
-    }
-
-    void LoadCheckpoint()
-    {
-        open = false;
-        animator.Play("Drawer_Idle");
-    }
-
-    void OnEnable()
-    {
-        GameManager.Singleton.OnLoadCheckpoint += LoadCheckpoint;
-    }
-
-    void OnDisable()
-    {
-        GameManager.Singleton.OnLoadCheckpoint -= LoadCheckpoint;
     }
 }

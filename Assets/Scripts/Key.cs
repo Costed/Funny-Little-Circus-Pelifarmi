@@ -1,18 +1,28 @@
 using UnityEngine;
+using System;
 
-public class Key : MonoBehaviour, IInteractable
+public class Key : MonoBehaviour
 {
-    [field:SerializeField] public KeyType Type { get; private set; }
+    IActivatable activatable;
 
-    [ContextMenu("Interact")]
-    public void Interact()
+    StateRecorder recorder;
+
+    void Awake()
     {
-        gameObject.SetActive(false);
-        GameManager.Singleton.KeyManager.CollectKey(this);
+        activatable = GetComponent<IActivatable>();
+        activatable.OnActivate += Activated;
+
+        recorder = new StateRecorder(transform, true);
+        recorder.OnStateLoad += LoadState;
     }
 
-    public void Reset()
+    void Activated()
     {
-        gameObject.SetActive(true);
+        recorder.RecordState(false);
+    }
+
+    void LoadState(bool state)
+    {
+        gameObject.SetActive(state);
     }
 }
