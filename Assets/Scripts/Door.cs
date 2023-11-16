@@ -21,8 +21,6 @@ public class Door : MonoBehaviour
 
     void Activated()
     {
-        recorder.RecordState(true);
-
         OpenDoor();
     }
 
@@ -32,13 +30,15 @@ public class Door : MonoBehaviour
         else CloseDoor();
     }
 
-    void OpenDoor()
+    public void OpenDoor()
     {
         animator.Play("Door_Open");
+        recorder.RecordState(true);
     }
 
-    void CloseDoor()
+    public void CloseDoor()
     {
         animator.Play("Door_Idle");
+        recorder.RecordState(false);
     }
 }

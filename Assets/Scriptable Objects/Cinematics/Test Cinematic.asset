@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a926180f06465f0439c5fb68c40bd21f, type: 3}
   m_Name: Test Cinematic
   m_EditorClassIdentifier: 
-  cinematicLength: 5
   id: 0
+  cameraTime: 3
+  playerTime: 5
   startDelay: 0.5
   endDelay: 1
-  cameraOnly: 1
+  controlPlayer: 1
+  controlCamera: 1
+  returnToStart: 1
+  startOfCinematic: 1

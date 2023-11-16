@@ -1,3 +1,4 @@
+using Random = UnityEngine.Random;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -29,14 +30,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            CinematicManager.PlayCinematic(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.L))
-        {
-            LoadCheckpoint();
-        }
+        if (Input.GetKeyDown(KeyCode.K)) CinematicManager.PlayCinematic(0);
+        else if (Input.GetKeyDown(KeyCode.L)) LoadCheckpoint();
     }
 
     public bool SetCheckpoint(CheckpointSO checkpoint)

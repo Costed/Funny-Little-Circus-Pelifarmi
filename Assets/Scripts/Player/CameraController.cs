@@ -81,6 +81,9 @@ public class CameraController : MonoBehaviour
         xRot = euler.x;
         yRot = euler.y;
 
+        if (xRot > 270) xRot -= 360;
+
+        ClampRotations();
         Rotate();
         transform.rotation = holder.rotation;
     }
