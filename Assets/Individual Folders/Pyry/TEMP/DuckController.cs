@@ -38,6 +38,7 @@ public class DuckController : MonoBehaviour
         distanceMultiplier *= distanceMultiplier;
 
         Vector3 forceDir = direction * Time.deltaTime;
+        forceDir.y *= 3f;
         rb.AddForce(forceDir * distanceMultiplier * force);
     }
 

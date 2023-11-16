@@ -19,5 +19,5 @@ MonoBehaviour:
   endDelay: 1
   controlPlayer: 1
   controlCamera: 1
-  returnToStart: 1
+  returnPlayerToStart: 1
   startOfCinematic: 1

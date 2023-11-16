@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System;
+using HietakissaUtils;
 
 public class CinematicManager : Manager
 {
@@ -36,8 +37,22 @@ public class CinematicManager : Manager
 
         Vector3 playerStartPos = playerTransform.position;
         Vector3 lookAt = cinematic.SampleLookAtPos(0f);
-
         Vector3 cinematicStartPos = cinematic.SamplePlayerPosition(0f);
+
+        float startLerp = 0f;
+
+        while (startLerp < 1f)
+        {
+            startLerp += Time.deltaTime;
+
+            playerTransform.position = Vector3.Lerp(playerStartPos, cinematicStartPos, startLerp);
+            cameraTransform.position = GameData.Player.CameraHolderTransform.position;
+
+            LerpCameraRot();
+
+            yield return null;
+        }
+
 
         while (playerPoint < 1f || cameraPoint < 1f)
         {
@@ -45,11 +60,9 @@ public class CinematicManager : Manager
 
             if (cinematic.ControlCamera)
             {
-                Vector3 targetLookAt = cinematic.SampleLookAtPos(cameraPoint);
-                lookAt = Vector3.Lerp(lookAt, targetLookAt, 2f * Time.deltaTime);
-                cameraTransform.LookAt(lookAt);
-                cameraTransform.position = GameData.Player.CameraHolderTransform.position;
+                LerpCameraRot();
 
+                cameraTransform.position = GameData.Player.CameraHolderTransform.position;
                 cameraPoint += cameraSpeed * Time.deltaTime;
             }
             else cameraTransform.rotation = Quaternion.Lerp(cameraTransform.rotation, cinematic.SampleRotation(playerPoint, cameraTransform.position), 2f * Time.deltaTime);
@@ -62,13 +75,31 @@ public class CinematicManager : Manager
 
         yield return new WaitForSeconds(cinematic.EndDelay);
 
-        GameData.Player.Camera.SetRotation(cameraRotation);
-        GameData.Player.Camera.Enable();
-        if (cinematic.ReturnToStart)
+        
+        if (cinematic.ReturnPlayerToStart)
         {
-            if (cinematic.StartOfCinematic) playerTransform.position = cinematicStartPos;
-            else playerTransform.position = playerStartPos;
+            if (cinematic.StartOfCinematic)
+            {
+                playerTransform.position = cinematicStartPos;
+                cameraTransform.rotation = cinematic.SampleRotation(0f, cinematicStartPos);
+            }
+            else
+            {
+                playerTransform.position = playerStartPos;
+                GameData.Player.Camera.SetRotation(cameraRotation);
+            }
         }
+        else GameData.Player.Camera.SetRotation(cameraTransform.rotation);
+
+        GameData.Player.Camera.Enable();
         GameData.Player.Movement.Enable();
+
+
+        void LerpCameraRot()
+        {
+            Vector3 targetLookAt = cinematic.SampleLookAtPos(cameraPoint);
+            Quaternion rotToLookAt = Quaternion.LookRotation(Maf.Direction(cameraTransform.position, targetLookAt));
+            cameraTransform.rotation = Quaternion.Lerp(cameraTransform.rotation, rotToLookAt, 2f * Time.deltaTime);
+        }
     }
 }

@@ -27,8 +27,8 @@ public class CinematicSO : ScriptableObject
     public bool ControlCamera => controlCamera;
 
     [HorizontalGroup(2)]
-    [SerializeField] bool returnToStart;
-    public bool ReturnToStart => returnToStart;
+    [SerializeField] bool returnPlayerToStart;
+    public bool ReturnPlayerToStart => returnPlayerToStart;
     [SerializeField, HideInInspector] bool startOfCinematic;
     public bool StartOfCinematic => startOfCinematic;
 
