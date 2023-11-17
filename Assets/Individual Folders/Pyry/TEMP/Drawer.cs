@@ -7,28 +7,29 @@ public class Drawer : MonoBehaviour
 
     bool open;
 
-    bool animPlaying = false;
+    //bool animPlaying = false;
 
-    IActivatable activatable;
-    StateRecorder recorder;
+    InteractionActivator activatable;
+    //StateRecorder recorder;
 
     void Awake()
     {
-        activatable = GetComponent<IActivatable>();
-        activatable.OnActivate += Activated;
+        activatable = GetComponent<InteractionActivator>();
+        activatable.overrideCanInteract = true;
+        //activatable.OnActivate += Activated;
 
         animator = GetComponent<Animator>();
 
-        recorder = new StateRecorder(transform);
-        recorder.OnStateLoad += LoadState;
+        //recorder = new StateRecorder(transform);
+        //recorder.OnStateLoad += LoadState;
     }
 
     void Activated()
     {
-        if (animPlaying) return;
+        //if (animPlaying) return;
 
         ToggleState();
-        recorder.RecordState(open);
+        //recorder.RecordState(open);
     }
 
     void LoadState(bool newState)
@@ -36,7 +37,7 @@ public class Drawer : MonoBehaviour
         open = newState;
 
         if (open) OpenDrawer();
-        else CloseDrawer(true);
+        //else CloseDrawer(true);
     }
 
     [ContextMenu("Toggle")]
@@ -50,26 +51,37 @@ public class Drawer : MonoBehaviour
         StartCoroutine(AnimPlayingFlag());
     }
 
-    void OpenDrawer()
+    public void OpenDrawer()
     {
         animator.Play("Drawer_Open");
+        StartCoroutine(AnimPlayingFlag());
+        //open = true;
     }
 
-    void CloseDrawer(bool instaClose = false)
+    public void CloseDrawer()
     {
-        if (instaClose) animator.Play("Drawer_Idle");
-        else animator.Play("Drawer_Close");
+        animator.Play("Drawer_Close");
+        StartCoroutine(AnimPlayingFlag());
+        //open = false;
+    }
+
+    public void InstaCloseDrawer()
+    {
+        animator.Play("Drawer_Idle");
     }
 
     WaitForSeconds openWait = new WaitForSeconds(0.5f);
     WaitForSeconds closeWait = new WaitForSeconds(0.25f);
     IEnumerator AnimPlayingFlag()
     {
-        animPlaying = true;
+        //animPlaying = true;
+        activatable.overrideCanInteract = false;
 
         if (open) yield return openWait;
         else yield return closeWait;
-        
-        animPlaying = false;
+
+        activatable.overrideCanInteract = true;
+
+        //animPlaying = false;
     }
 }

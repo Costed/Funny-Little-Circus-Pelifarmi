@@ -6,10 +6,14 @@ public class MovementController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float runMultiplier;
 
+    [SerializeField] float crouchHeight;
+    [SerializeField] bool keepCrouchPressedAirborne;
+
     [Header("Physics")]
     [SerializeField] float gravity;
     [SerializeField] float fallMultiplier;
     [SerializeField] float drag;
+
 
     CharacterController cc;
 
@@ -30,6 +34,9 @@ public class MovementController : MonoBehaviour
     bool isGrounded;
     bool lastGrounded;
 
+    bool isCrouching;
+    bool crouchKeyHeld;
+
     void Awake()
     {
         cc = GetComponent<CharacterController>();
@@ -41,6 +48,11 @@ public class MovementController : MonoBehaviour
     {
         if (!cc.enabled) return;
 
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (Physics.Raycast(GameData.Player.CameraTransform.position, GameData.Player.CameraTransform.forward, out RaycastHit hit, 100f)) Teleport(hit.point);
+        }
+
         //Grounded check
         isGrounded = Physics.SphereCast(transform.position + Vector3.up * (sphereCastRadius + sphereCastOffset), sphereCastRadius, Vector3.down, out sphereCast, sphereCastOffset * 2);
         Physics.Raycast(transform.position + Vector3.up * rayCastOffset, Vector3.down, out groundRay, rayCastOffset * 2);
@@ -51,6 +63,7 @@ public class MovementController : MonoBehaviour
         HandlePhysics();
         GetInput();
         HandleMovement();
+        HandleCrouching();
 
         lastGrounded = isGrounded;
 
@@ -101,8 +114,64 @@ public class MovementController : MonoBehaviour
                 float GetSpeedMultiplier()
                 {
                     if (Input.GetKey(KeyCode.LeftShift)) return runMultiplier;
+                    else if (isCrouching) return 0.7f;
                     else return 1;
                 }
+            }
+        }
+
+        void HandleCrouching()
+        {
+            KeyCode crouchKey;
+
+            if (Application.platform == RuntimePlatform.WebGLPlayer) crouchKey = KeyCode.C;
+            else crouchKey = KeyCode.LeftControl;
+
+            if (Input.GetKeyDown(crouchKey)) crouchKeyHeld = true;
+            else if (Input.GetKeyUp(crouchKey)) crouchKeyHeld = false;
+
+            if (!isGrounded)
+            {
+                if (isCrouching) EndCrouch();
+                return;
+            }
+
+            if (crouchKeyHeld && isCrouching) return;
+
+            if (crouchKeyHeld && !isCrouching)
+            {
+                StartCrouch();
+            }
+            else if (isCrouching)
+            {
+                if (!Physics.SphereCast(transform.position + Vector3.up * sphereCastRadius, sphereCastRadius, Vector3.up, out RaycastHit hit, 1.8f - sphereCastRadius * 2f))
+                {
+                    EndCrouch();
+                }
+                else
+                {
+                    Debug.Log($"hit: {hit.collider.name}");
+                }
+            }
+
+            void StartCrouch()
+            {
+                isCrouching = true;
+
+                cc.enabled = false;
+                transform.localScale = new Vector3(1f, crouchHeight / 2f, 1f);
+                cc.enabled = true;
+                //Teleport(transform.position - new Vector3(0f, (2f - crouchHeight) / 2f, 0f));
+            }
+
+            void EndCrouch()
+            {
+                isCrouching = false;
+
+                cc.enabled = false;
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                cc.enabled = true;
+                //Teleport(transform.position + new Vector3(0f, (2f - crouchHeight) / 2f, 0f));
             }
         }
 

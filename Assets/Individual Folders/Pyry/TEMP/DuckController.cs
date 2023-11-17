@@ -13,6 +13,11 @@ public class DuckController : MonoBehaviour
 
     Rigidbody rb;
 
+    bool closeEnoughToPoint;
+
+    [SerializeField] float torque;
+    [SerializeField] float damping;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -25,11 +30,21 @@ public class DuckController : MonoBehaviour
 
     void Update()
     {
+        closeEnoughToPoint = Vector3.Distance(transform.position, GetPointOnPath()) < 0.2f;
+
+        if (!closeEnoughToPoint) return;
+
         point += Time.deltaTime * (1f / lapTime);
         if (point > 1f) point--;
     }
 
     void FixedUpdate()
+    {
+        Move();
+        Rotate();
+    }
+
+    void Move()
     {
         Vector3 point = GetPointOnPath();
         Vector3 direction = Maf.Direction(rb.position, point);
@@ -42,9 +57,32 @@ public class DuckController : MonoBehaviour
         rb.AddForce(forceDir * distanceMultiplier * force);
     }
 
+    void Rotate()
+    {
+        float angle;
+        Vector3 axis;
+        Quaternion difference = Quaternion.FromToRotation(transform.up, Vector3.up);
+        difference.ToAngleAxis(out angle, out axis);
+
+        rb.AddTorque(-rb.angularVelocity * damping, ForceMode.Acceleration);
+        rb.AddTorque(axis.normalized * angle * torque * Time.deltaTime, ForceMode.Acceleration);
+
+        Vector3 direction = GetDirOnPath();
+        difference = Quaternion.FromToRotation(-transform.forward, direction);
+        difference.ToAngleAxis(out angle, out axis);
+
+        rb.AddTorque(axis.normalized * angle * torque * Time.deltaTime, ForceMode.Acceleration);
+    }
+
     Vector3 GetPointOnPath()
     {
         path.Evaluate(point, out float3 position, out float3 tangent, out float3 up);
         return position;
+    }
+
+    Vector3 GetDirOnPath()
+    {
+        path.Evaluate(point, out float3 position, out float3 tangent, out float3 up);
+        return tangent;
     }
 }

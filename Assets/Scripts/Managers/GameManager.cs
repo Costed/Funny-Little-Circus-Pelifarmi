@@ -1,4 +1,3 @@
-using Random = UnityEngine.Random;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -10,12 +9,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] Manager[] managers;
     public ItemManager ItemManager => (ItemManager)managers[0];
     public CinematicManager CinematicManager => (CinematicManager)managers[1];
-    //public CinematicManager CinematicManager;
 
     CheckpointSO currentCheckpoint;
 
     public event Action OnLoadCheckpoint;
-    public event Action OnRefreshDoors;
 
     public Dictionary<Transform, bool> tempStates = new Dictionary<Transform, bool>();
     public Dictionary<Transform, bool> savedStates = new Dictionary<Transform, bool>();
@@ -30,8 +27,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K)) CinematicManager.PlayCinematic(0);
-        else if (Input.GetKeyDown(KeyCode.L)) LoadCheckpoint();
+        if (Input.GetKeyDown(KeyCode.L)) LoadCheckpoint();
     }
 
     public bool SetCheckpoint(CheckpointSO checkpoint)
@@ -68,11 +64,6 @@ public class GameManager : MonoBehaviour
 
             OnLoadCheckpoint?.Invoke();
         }
-    }
-
-    public void RefreshDoors()
-    {
-        OnRefreshDoors?.Invoke();
     }
 }
 
