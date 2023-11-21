@@ -51,6 +51,8 @@ public class InteractionController : MonoBehaviour
             {
                 if (GameManager.Singleton.ItemManager.HasItem(tempDuckKeyItem))
                 {
+                    GameManager.Singleton.ItemManager.RemoveItem(tempDuckKeyItem);
+
                     Instantiate(duckKey, duckObject.transform.position, duckObject.transform.rotation);
                     rodObject.SetActive(false);
                     hasRod = false;
