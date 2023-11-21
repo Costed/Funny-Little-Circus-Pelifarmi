@@ -6,6 +6,8 @@ public class MovementController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float runMultiplier;
 
+    [SerializeField] float jumpForce;
+
     [SerializeField] float crouchHeight;
     [SerializeField] bool keepCrouchPressedAirborne;
 
@@ -63,7 +65,9 @@ public class MovementController : MonoBehaviour
         HandlePhysics();
         GetInput();
         HandleMovement();
+        
         HandleCrouching();
+        HandleJumping();
 
         lastGrounded = isGrounded;
 
@@ -174,6 +178,22 @@ public class MovementController : MonoBehaviour
                 //Teleport(transform.position + new Vector3(0f, (2f - crouchHeight) / 2f, 0f));
             }
         }
+
+        void HandleJumping()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (CanJump()) Jump();
+            }
+
+            bool CanJump() => (isGrounded && !OnSteepGround() && !isCrouching);
+
+            void Jump()
+            {
+                velocity.y = jumpForce;
+            }
+        }
+
 
         void StartAir()
         {
