@@ -8,7 +8,8 @@ public class FortuneTeller : MonoBehaviour
     [SerializeField] ItemSO[] partItems;
     [SerializeField] ItemSO crystalBallItem;
 
-    [SerializeField] ItemSO stageKey;
+    //[SerializeField] ItemSO stageKey;
+    [SerializeField] GameObject stageKeyObject;
     int fixedParts;
 
     public void InsertItem()
@@ -39,6 +40,7 @@ public class FortuneTeller : MonoBehaviour
         }
         fixedParts++;
 
-        if (fixedParts == 5) GameManager.Singleton.ItemManager.AddItem(stageKey);
+        //if (fixedParts == 5) GameManager.Singleton.ItemManager.AddItem(stageKey);
+        if (fixedParts == 5) stageKeyObject.SetActive(true);
     }
 }
