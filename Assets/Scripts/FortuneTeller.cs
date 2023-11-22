@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FortuneTeller : MonoBehaviour
@@ -12,6 +13,22 @@ public class FortuneTeller : MonoBehaviour
     [SerializeField] GameObject stageKeyObject;
     int fixedParts;
 
+    Animator anim;
+
+    Dictionary<int, int> animations = new Dictionary<int, int>();
+
+
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+        animations[0] = Animator.StringToHash("Base Layer.PlaceCrystalBall");
+        animations[1] = Animator.StringToHash("Key Anim Layer.SpitOutKey");
+
+        anim.Play(animations[0]);
+        //anim.Play(animations[1]);
+    }
+
+
     public void InsertItem()
     {
         if (GameManager.Singleton.ItemManager.HasItem(partItems[0])) RepairPart(0);
@@ -23,14 +40,19 @@ public class FortuneTeller : MonoBehaviour
 
     public void InsertCrystalBall()
     {
-        if (GameManager.Singleton.ItemManager.HasItem(crystalBallItem)) RepairPart(-1);
+        if (GameManager.Singleton.ItemManager.HasItem(crystalBallItem))
+        {
+            RepairPart(-1);
+            anim.Play(animations[0]);
+            //anim.Play(animations[1]);
+        }
     }
 
     void RepairPart(int index)
     {
         if (index == -1)
         {
-            crystalBall.SetActive(true);
+            //crystalBall.SetActive(true);
             GameManager.Singleton.ItemManager.RemoveItem(crystalBallItem);
         }
         else
