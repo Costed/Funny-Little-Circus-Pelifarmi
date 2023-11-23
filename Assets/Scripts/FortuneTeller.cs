@@ -3,15 +3,11 @@ using UnityEngine;
 
 public class FortuneTeller : MonoBehaviour
 {
-    [SerializeField] GameObject[] repairParts;
-    [SerializeField] GameObject crystalBall;
+    [SerializeField] SimpleObjectAnimator[] repairPartAnimators;
+    [SerializeField] SimpleObjectAnimator crystalBallAnimator;
 
     [SerializeField] ItemSO[] partItems;
     [SerializeField] ItemSO crystalBallItem;
-
-    //[SerializeField] ItemSO stageKey;
-    [SerializeField] GameObject stageKeyObject;
-    int fixedParts;
 
     Animator anim;
 
@@ -21,11 +17,8 @@ public class FortuneTeller : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
-        animations[0] = Animator.StringToHash("Base Layer.PlaceCrystalBall");
-        animations[1] = Animator.StringToHash("Key Anim Layer.SpitOutKey");
-
-        anim.Play(animations[0]);
-        //anim.Play(animations[1]);
+        animations[0] = Animator.StringToHash("Base Layer.SpitOutKey");
+        //anim.Play(animations[0]);
     }
 
 
@@ -35,34 +28,26 @@ public class FortuneTeller : MonoBehaviour
         else if (GameManager.Singleton.ItemManager.HasItem(partItems[1])) RepairPart(1);
         else if (GameManager.Singleton.ItemManager.HasItem(partItems[2])) RepairPart(2);
         else if (GameManager.Singleton.ItemManager.HasItem(partItems[3])) RepairPart(3);
-        else if (GameManager.Singleton.ItemManager.HasItem(crystalBallItem)) RepairPart(-1);
     }
 
     public void InsertCrystalBall()
     {
-        if (GameManager.Singleton.ItemManager.HasItem(crystalBallItem))
-        {
-            RepairPart(-1);
-            anim.Play(animations[0]);
-            //anim.Play(animations[1]);
-        }
+        RepairPart(-1);
     }
 
     void RepairPart(int index)
     {
         if (index == -1)
         {
-            //crystalBall.SetActive(true);
+            crystalBallAnimator.OnAnimationComplete = () => anim.Play(animations[0]);
+            crystalBallAnimator.Play();
+
             GameManager.Singleton.ItemManager.RemoveItem(crystalBallItem);
         }
         else
         {
-            repairParts[index].SetActive(true);
+            repairPartAnimators[index].Play();
             GameManager.Singleton.ItemManager.RemoveItem(partItems[index]);
         }
-        fixedParts++;
-
-        //if (fixedParts == 5) GameManager.Singleton.ItemManager.AddItem(stageKey);
-        if (fixedParts == 5) stageKeyObject.SetActive(true);
     }
 }

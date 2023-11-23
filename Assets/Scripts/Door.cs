@@ -8,12 +8,16 @@ public class Door : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
+
     public void OpenDoor()
     {
         animator.Play("Door_Open");
     }
-
     public void CloseDoor()
+    {
+        animator.Play("Door_Close");
+    }
+    public void CloseDoorInstant()
     {
         animator.Play("Door_Idle");
     }

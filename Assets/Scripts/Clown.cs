@@ -4,26 +4,31 @@ using UnityEngine;
 [SelectionBase]
 public class Clown : MonoBehaviour
 {
-    NavMeshAgent agent;
-    bool chasing;
-
-    Transform playerTransform;
-
     [SerializeField] float speed;
     [SerializeField] float catchRange;
 
     [SerializeField] bool drawGizmos;
+    
+    NavMeshAgent agent;
+    bool chasing;
+    Vector3 startPos;
+
+    Transform playerTransform;
 
 
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
+
+        startPos = transform.position;
     }
 
     void Start()
     {
         playerTransform = GameData.Player.Transform;
+
+        GameManager.Singleton.OnLoadCheckpoint += () => EndChase();
     }
 
     void Update()
@@ -44,7 +49,6 @@ public class Clown : MonoBehaviour
     public void StartChase()
     {
         agent.enabled = true;
-
         chasing = true;
     }
 
@@ -52,14 +56,18 @@ public class Clown : MonoBehaviour
     public void EndChase()
     {
         agent.enabled = false;
-
         chasing = false;
+
+        transform.position = startPos;
     }
 
 
     void OnDrawGizmos()
     {
         if (!drawGizmos) return;
+
+        if (chasing) Gizmos.color = Color.red;
+        else Gizmos.color = Color.blue;
 
         Gizmos.DrawWireSphere(transform.position, catchRange);
     }
