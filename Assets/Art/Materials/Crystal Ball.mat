@@ -53,12 +53,17 @@ Material:
     m_Floats:
     - _Clip: 0.11
     - _Falloff: 1
+    - _IORMedium: 1.85
+    - _IORSource: 0.48
     - _Max: 1
     - _Min: 0
     - _Power: 1.77
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Refraction: -0.2
+    - _RefractionStrength: 2
     - _Strength: 1
     m_Colors:
     - _Color: {r: 0.28590623, g: 0.25490192, b: 0.83137256, a: 1}
+    - _Emission: {r: 0, g: 0.52273995, b: 9.082411, a: 1}
   m_BuildTextureStacks: []

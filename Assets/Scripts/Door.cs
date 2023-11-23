@@ -13,6 +13,10 @@ public class Door : MonoBehaviour
     {
         animator.Play("Door_Open");
     }
+    public void OpenDoorInstant()
+    {
+        animator.Play("Door_Open", -1, 1f);
+    }
     public void CloseDoor()
     {
         animator.Play("Door_Close");

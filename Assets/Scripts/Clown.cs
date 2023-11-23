@@ -12,6 +12,7 @@ public class Clown : MonoBehaviour
     NavMeshAgent agent;
     bool chasing;
     Vector3 startPos;
+    Quaternion startRot;
 
     Transform playerTransform;
 
@@ -22,6 +23,7 @@ public class Clown : MonoBehaviour
         agent.speed = speed;
 
         startPos = transform.position;
+        startRot = transform.rotation;
     }
 
     void Start()
@@ -59,6 +61,7 @@ public class Clown : MonoBehaviour
         chasing = false;
 
         transform.position = startPos;
+        transform.rotation = startRot;
     }
 
 

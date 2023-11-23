@@ -67,18 +67,12 @@ public class InteractionController : MonoBehaviour
             {
                 if (hit.transform.TryGetComponent(out IInteractable interactable))
                 {
-                    if (interactable.CanInteract()) Debug.Log("Interacted");
-                    else Debug.Log("Couldn't interact");
-
                     if (interactable.CanInteract()) interactable.Interact();
                 }
                 else if (Physics.Raycast(GameData.Player.CameraTransform.position, GameData.Player.CameraTransform.forward, out hit, interactionRange, interactionLayer))
                 {
                     if (hit.transform.TryGetComponent(out interactable))
                     {
-                        if (interactable.CanInteract()) Debug.Log("Interacted");
-                        else Debug.Log("Couldn't interact");
-
                         if (interactable.CanInteract()) interactable.Interact();
                     }
                 }

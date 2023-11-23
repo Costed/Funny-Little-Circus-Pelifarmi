@@ -9,9 +9,13 @@ public class FortuneTeller : MonoBehaviour
     [SerializeField] ItemSO[] partItems;
     [SerializeField] ItemSO crystalBallItem;
 
+    [SerializeField] InteractionActivator crystalBallInteractor;
+
     Animator anim;
 
     Dictionary<int, int> animations = new Dictionary<int, int>();
+
+    int parts;
 
 
     void Awake()
@@ -19,6 +23,7 @@ public class FortuneTeller : MonoBehaviour
         anim = GetComponent<Animator>();
         animations[0] = Animator.StringToHash("Base Layer.SpitOutKey");
         //anim.Play(animations[0]);
+        crystalBallInteractor.overrideCanInteract = false;
     }
 
 
@@ -49,5 +54,8 @@ public class FortuneTeller : MonoBehaviour
             repairPartAnimators[index].Play();
             GameManager.Singleton.ItemManager.RemoveItem(partItems[index]);
         }
+
+        parts++;
+        if (parts == 4) crystalBallInteractor.overrideCanInteract = true;
     }
 }
