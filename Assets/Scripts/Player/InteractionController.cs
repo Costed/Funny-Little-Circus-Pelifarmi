@@ -1,3 +1,4 @@
+using UnityEngine.UI;
 using UnityEngine;
 
 public class InteractionController : MonoBehaviour
@@ -6,45 +7,63 @@ public class InteractionController : MonoBehaviour
     [SerializeField] float interactionRadius = 0.2f;
     [SerializeField] LayerMask interactionLayer;
 
-    [SerializeField] GameObject rodObject;
-    [SerializeField] GameObject duckObject;
-    [SerializeField] GameObject duckObjectKey;
+    [Header("Viewmodel")]
+    [SerializeField] GameObject rodViewmodel;
+    [SerializeField] GameObject duckViewmodel;
+    [SerializeField] GameObject keyViewmodel;
+
+    [Header("Prefabs")]
     [SerializeField] GameObject duckPrefab;
-    [SerializeField] GameObject duckKey;
+    [SerializeField] GameObject keyPrefab;
 
     bool hasRod;
     bool hasDuck;
 
+    [Header("Items")]
     [SerializeField] ItemSO rodItem;
     [SerializeField] ItemSO duckItem;
     [SerializeField] ItemSO tempDuckKeyItem;
+
+    InteractionActivator interactable;
+    InteractionActivator lastInteractable;
+    float interactionTime;
+
+    [Header("UI")]
+    [SerializeField] RectTransform crosshair;
+    [SerializeField] RectTransform interactionIndicator;
+    [SerializeField] RectTransform interactionIndicatorDot;
+
+    bool holdingInteract;
 
     void ItemAdded(int itemID)
     {
         if (itemID == rodItem.ID)
         {
-            rodObject.SetActive(true);
+            rodViewmodel.SetActive(true);
             hasRod = true;
         }
         else if (itemID == duckItem.ID)
         {
-            duckObject.SetActive(true);
+            duckViewmodel.SetActive(true);
             hasDuck = true;
         }
-        else if (itemID == tempDuckKeyItem.ID) duckObjectKey.SetActive(true);
+        else if (itemID == tempDuckKeyItem.ID) keyViewmodel.SetActive(true);
     }
 
     void ItemRemoved(int itemID)
     {
         if (itemID == duckItem.ID)
         {
-            duckObject.SetActive(false);
+            duckViewmodel.SetActive(false);
             hasDuck = false;
         }
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E)) holdingInteract = true;
+        else if (Input.GetKeyUp(KeyCode.E)) holdingInteract = false;
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (hasRod && hasDuck)
@@ -53,31 +72,68 @@ public class InteractionController : MonoBehaviour
                 {
                     GameManager.Singleton.ItemManager.RemoveItem(tempDuckKeyItem);
 
-                    Instantiate(duckKey, duckObject.transform.position, duckObject.transform.rotation);
-                    rodObject.SetActive(false);
+                    Instantiate(keyPrefab, duckViewmodel.transform.position, duckViewmodel.transform.rotation);
+                    rodViewmodel.SetActive(false);
                     hasRod = false;
                 }
-                else Instantiate(duckPrefab, duckObject.transform.position, duckObject.transform.rotation);
-                
+                else Instantiate(duckPrefab, duckViewmodel.transform.position, duckViewmodel.transform.rotation);
+
                 GameManager.Singleton.ItemManager.RemoveAllItemsOfType(duckItem);
+                holdingInteract = false;
+
                 return;
             }
-
-            if (Physics.SphereCast(GameData.Player.CameraTransform.position, interactionRadius, GameData.Player.CameraTransform.forward, out RaycastHit hit, interactionRange, interactionLayer))
+        }
+        else if (Physics.SphereCast(GameData.Player.CameraTransform.position, interactionRadius, GameData.Player.CameraTransform.forward, out RaycastHit hit, interactionRange, interactionLayer))
+        {
+            if (hit.transform.TryGetComponent(out interactable))
             {
-                if (hit.transform.TryGetComponent(out IInteractable interactable))
+                if (interactable != lastInteractable) interactionTime = 0f;
+                if (holdingInteract && interactable.CanInteract()) interactionTime += Time.deltaTime;
+                else interactionTime = 0f;
+            }
+            else if (Physics.Raycast(GameData.Player.CameraTransform.position, GameData.Player.CameraTransform.forward, out hit, interactionRange, interactionLayer))
+            {
+                if (hit.transform.TryGetComponent(out interactable))
                 {
-                    if (interactable.CanInteract()) interactable.Interact();
+                    if (interactable != lastInteractable) interactionTime = 0f;
+                    if (holdingInteract && interactable.CanInteract()) interactionTime += Time.deltaTime;
+                    else interactionTime = 0f;
                 }
-                else if (Physics.Raycast(GameData.Player.CameraTransform.position, GameData.Player.CameraTransform.forward, out hit, interactionRange, interactionLayer))
-                {
-                    if (hit.transform.TryGetComponent(out interactable))
-                    {
-                        if (interactable.CanInteract()) interactable.Interact();
-                    }
-                }
+                else interactable = null;
+            }
+            else interactable = null;
+
+            if (interactable != null && holdingInteract && interactable.CanInteract() && interactionTime >= interactable.interactionTime)
+            {
+                interactable.Interact();
+                holdingInteract = false;
+                interactionTime = 0f;
             }
         }
+        else
+        {
+            interactionTime = 0f;
+            interactable = null;
+        }
+
+        if (interactable && interactable.CanInteract())
+        {
+            interactionIndicator.gameObject.SetActive(true);
+            crosshair.gameObject.SetActive(false);
+
+            Vector3 baseSize = Vector3.one * 0.9f;
+            float sizeMultiplier = interactionTime / (interactable.interactionTime == 0f ? 1f : interactable.interactionTime);
+            interactionIndicatorDot.localScale = baseSize * sizeMultiplier;
+        }
+        else
+        {
+            interactionIndicator.gameObject.SetActive(false);
+            crosshair.gameObject.SetActive(true);
+        }
+
+
+        lastInteractable = interactable;
     }
 
 

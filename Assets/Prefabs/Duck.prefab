@@ -181,9 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a4c838a929f174e8282d7e4c019e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <interactionTime>k__BackingField: 0
   requireItem: 1
   consume: 0
-  item: {fileID: 11400000, guid: 4a224d5433524b34f85bb825ac1588d9, type: 2}
+  items:
+  - {fileID: 11400000, guid: 4a224d5433524b34f85bb825ac1588d9, type: 2}
   doesntHaveItem: 1
   blacklistItem: {fileID: 11400000, guid: 419b7bf244a2f25459ca6e5b00292fa6, type: 2}
   allowOverriding: 0

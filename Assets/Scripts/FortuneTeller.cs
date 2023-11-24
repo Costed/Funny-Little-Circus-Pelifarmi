@@ -29,10 +29,15 @@ public class FortuneTeller : MonoBehaviour
 
     public void InsertItem()
     {
-        if (GameManager.Singleton.ItemManager.HasItem(partItems[0])) RepairPart(0);
-        else if (GameManager.Singleton.ItemManager.HasItem(partItems[1])) RepairPart(1);
-        else if (GameManager.Singleton.ItemManager.HasItem(partItems[2])) RepairPart(2);
-        else if (GameManager.Singleton.ItemManager.HasItem(partItems[3])) RepairPart(3);
+        //if (GameManager.Singleton.ItemManager.HasItem(partItems[0])) RepairPart(0);
+        //else if (GameManager.Singleton.ItemManager.HasItem(partItems[1])) RepairPart(1);
+        //else if (GameManager.Singleton.ItemManager.HasItem(partItems[2])) RepairPart(2);
+        //else if (GameManager.Singleton.ItemManager.HasItem(partItems[3])) RepairPart(3);
+
+        if (GameManager.Singleton.ItemManager.lastRemovedItem == partItems[0]) RepairPart(0);
+        else if (GameManager.Singleton.ItemManager.lastRemovedItem == partItems[1]) RepairPart(1);
+        else if (GameManager.Singleton.ItemManager.lastRemovedItem == partItems[2]) RepairPart(2);
+        else if (GameManager.Singleton.ItemManager.lastRemovedItem == partItems[3]) RepairPart(3);
     }
 
     public void InsertCrystalBall()
@@ -47,15 +52,16 @@ public class FortuneTeller : MonoBehaviour
             crystalBallAnimator.OnAnimationComplete = () => anim.Play(animations[0]);
             crystalBallAnimator.Play();
 
-            GameManager.Singleton.ItemManager.RemoveItem(crystalBallItem);
+            //GameManager.Singleton.ItemManager.RemoveItem(crystalBallItem);
         }
         else
         {
             repairPartAnimators[index].Play();
-            GameManager.Singleton.ItemManager.RemoveItem(partItems[index]);
+            //GameManager.Singleton.ItemManager.RemoveItem(partItems[index]);
         }
 
         parts++;
-        if (parts == 4) crystalBallInteractor.overrideCanInteract = true;
+        //if (parts == 4) crystalBallInteractor.overrideCanInteract = true;
+        if (parts == 4) crystalBallInteractor.gameObject.SetActive(true);
     }
 }
