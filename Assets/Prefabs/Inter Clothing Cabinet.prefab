@@ -94,6 +94,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3886384696658541630}
     m_Modifications:
+    - target: {fileID: -8773443553380297859, guid: a469d378d710441469238896632bb488,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d57267d5d0092fe41b77d7cbc3cd90ce, type: 2}
     - target: {fileID: -8679921383154817045, guid: a469d378d710441469238896632bb488,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -144,6 +149,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2083022770992097693, guid: a469d378d710441469238896632bb488,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d57267d5d0092fe41b77d7cbc3cd90ce, type: 2}
     - target: {fileID: -1736194379373015842, guid: a469d378d710441469238896632bb488,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -169,6 +179,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: kaappi_vaatteita
       objectReference: {fileID: 0}
+    - target: {fileID: 1857191138314766581, guid: a469d378d710441469238896632bb488,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d57267d5d0092fe41b77d7cbc3cd90ce, type: 2}
     - target: {fileID: 2425472216712567411, guid: a469d378d710441469238896632bb488,
         type: 3}
       propertyPath: m_LocalRotation.w

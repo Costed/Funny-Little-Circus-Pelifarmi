@@ -149,6 +149,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -6333971998726211716, guid: fdd480ab85508824aa19bc2c3e7d6162,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d57267d5d0092fe41b77d7cbc3cd90ce, type: 2}
     - target: {fileID: -1324241630941383695, guid: fdd480ab85508824aa19bc2c3e7d6162,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -184,6 +189,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2241236693922094883, guid: fdd480ab85508824aa19bc2c3e7d6162,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d57267d5d0092fe41b77d7cbc3cd90ce, type: 2}
     - target: {fileID: 2551866367279267110, guid: fdd480ab85508824aa19bc2c3e7d6162,
         type: 3}
       propertyPath: m_Name
