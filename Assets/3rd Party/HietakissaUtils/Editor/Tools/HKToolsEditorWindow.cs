@@ -56,6 +56,12 @@ public class HKToolsEditorWindow : EditorWindow
         currentTool = null;
     }
 
+    void Update()
+    {
+        if (currentTool == null) return;
+        currentTool.Update();
+    }
+
     void CreateToolButtonList()
     {
         List<VisualElement> toolElements = new List<VisualElement>();
@@ -148,6 +154,11 @@ public abstract class HKTool
 
     }
 
+    public virtual void Update()
+    {
+
+    }
+
     protected void DrawTitle()
     {
         Label title = new Label(toolName);
@@ -159,13 +170,31 @@ public abstract class HKTool
         page.Add(title);
     }
 
-    protected void DrawButton(VisualElement element, Action onClickEvent, string buttonText = "", float fontSize = 12, float flexGrow = 0)
+    protected VisualElement DrawButton(VisualElement element, Action onClickEvent, string buttonText = "", float fontSize = 12, float flexGrow = 0)
     {
         Button button = new Button(onClickEvent);
         button.text = buttonText;
         button.style.fontSize = fontSize;
         button.style.flexGrow = flexGrow;
+
         element.Add(button);
+        return element;
+    }
+
+    protected VisualElement DrawToggle(VisualElement element, EventCallback<ChangeEvent<bool>> setValue, string name = "", bool defaultValue = false)
+    {
+        Toggle toggle = new Toggle();
+        toggle.text = name;
+        toggle.SetValueWithoutNotify(defaultValue);
+        toggle.RegisterValueChangedCallback(setValue);
+
+        element.Add(toggle);
+        return element;
+    }
+
+    protected StyleLength GetStyleLengthForPercentage(float percentage)
+    {
+        return new StyleLength(new Length(percentage, LengthUnit.Percent));
     }
 
     public void SetPageElement(VisualElement pageElement, HKToolsEditorWindow editorWindow)

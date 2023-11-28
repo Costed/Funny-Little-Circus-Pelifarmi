@@ -103,6 +103,8 @@ namespace HietakissaUtils
             return quaternion.eulerAngles;
         }
 
+        public static Vector3 DirectionTo(this Transform t, Vector3 position) => Maf.Direction(t.position, position);
+
         public static int Magnitude(this float num)
         {
             return num > 0 ? 1 : (num < 0 ? -1 : 0);
@@ -124,7 +126,6 @@ namespace HietakissaUtils
             }
             return false;
         }
-
         public static bool Contains<TType>(this TType[] array, TType value)
         {
             int length = array.Length;
@@ -134,7 +135,6 @@ namespace HietakissaUtils
             }
             return false;
         }
-
         public static bool Contains(this LayerMask mask, int layer)
         {
             return mask == (mask | (1 << layer));
@@ -292,6 +292,8 @@ namespace HietakissaUtils
 
         public static bool RandomBool(int percentage) => Random.Range(1, 101) <= percentage;
         public static bool RandomBool(float percentage) => Random.Range(0f, 1f) <= percentage * 0.01f;
+
+        public static Quaternion RandomDirection => Quaternion.LookRotation(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)), Vector3.up);
 
         public static Vector3 CalculateCollisionPoint(Vector3 targetPos, Vector3 targetVelocity, Vector3 projectilePos, float projectileSpeed)
         {
