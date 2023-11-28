@@ -12,12 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a926180f06465f0439c5fb68c40bd21f, type: 3}
   m_Name: Test Cinematic
   m_EditorClassIdentifier: 
-  id: 0
-  cameraTime: 3
-  playerTime: 5
-  startDelay: 0.5
-  endDelay: 1
-  controlPlayer: 1
-  controlCamera: 1
-  returnPlayerToStart: 1
-  startOfCinematic: 1
+  <ID>k__BackingField: 0
+  <clip>k__BackingField: {fileID: 7400000, guid: 666065d22efb7604bbaf59e6e6740bff,
+    type: 2}

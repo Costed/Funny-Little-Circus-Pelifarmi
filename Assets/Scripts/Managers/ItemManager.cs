@@ -10,6 +10,8 @@ public class ItemManager : Manager
     List<int> tempInventory = new List<int>();
     List<int> savedInventory = new List<int>();
 
+    public ItemSO lastRemovedItem { get; private set; }
+
     public void AddItem(ItemSO item)
     {
         tempInventory.Add(item.ID);
@@ -20,6 +22,8 @@ public class ItemManager : Manager
     {
         tempInventory.Remove(item.ID);
         OnItemRemoved?.Invoke(item.ID);
+
+        lastRemovedItem = item;
     }
 
     public void RemoveAllItems()
@@ -33,6 +37,8 @@ public class ItemManager : Manager
     {
         while (tempInventory.Contains(item.ID)) tempInventory.Remove(item.ID);
         OnItemRemoved?.Invoke(item.ID);
+
+        lastRemovedItem = item;
     }
 
     public bool HasItem(ItemSO item) => tempInventory.Contains(item.ID);

@@ -1,14 +1,17 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
+using static UnityEditor.Progress;
 
 public class InteractionActivator : MonoBehaviour, IInteractable
 {
     public event Action OnActivate;
 
-    [HorizontalGroup(3)]
+    [field:SerializeField] public float interactionTime {  get; private set; }
+
     [SerializeField] bool requireItem;
-    [SerializeField, ConditionalField(nameof(requireItem)), HideInInspector] bool consume;
-    [SerializeField, ConditionalField(nameof(requireItem)), HideInInspector] ItemSO item;
+    [SerializeField, ConditionalField(nameof(requireItem))] bool consume;
+    [SerializeField, ConditionalField(nameof(requireItem))] ItemSO[] items;
 
     [HorizontalGroup(2)]
     [SerializeField] bool doesntHaveItem;
@@ -25,8 +28,22 @@ public class InteractionActivator : MonoBehaviour, IInteractable
 
         if (requireItem)
         {
-            if (GameManager.Singleton.ItemManager.HasItem(item)) return true;
+            bool hasAnyItem = false;
+
+            foreach (ItemSO item in items)
+            {
+                if (GameManager.Singleton.ItemManager.HasItem(item))
+                {
+                    hasAnyItem = true;
+                    break;
+                }
+            }
+
+            if (hasAnyItem) return true;
             else return false;
+
+            //if (GameManager.Singleton.ItemManager.HasItem(item)) return true;
+            //else return false;
         }
         else return true;
     }
@@ -38,7 +55,27 @@ public class InteractionActivator : MonoBehaviour, IInteractable
 
     public void Activate()
     {
-        if (requireItem && consume) GameManager.Singleton.ItemManager.RemoveItem(item);
+        if (requireItem)
+        {
+            ItemSO firstItemInInventory = null;
+
+            foreach (ItemSO item in items)
+            {
+                if (GameManager.Singleton.ItemManager.HasItem(item))
+                {
+                    firstItemInInventory = item;
+                    break;
+                }
+            }
+
+            Debug.Log($"Activated, found item {firstItemInInventory.ID}");
+
+            if (consume) GameManager.Singleton.ItemManager.RemoveItem(firstItemInInventory);
+        }
+        
         OnActivate?.Invoke();
+
+        //if (requireItem && consume) GameManager.Singleton.ItemManager.RemoveItem(item);
+        //OnActivate?.Invoke();
     }
 }

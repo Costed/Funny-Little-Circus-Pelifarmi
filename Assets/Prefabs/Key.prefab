@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a4c838a929f174e8282d7e4c019e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <interactionTime>k__BackingField: 0.5
   requireItem: 0
   consume: 0
   item: {fileID: 0}
