@@ -53,12 +53,16 @@ public class HKPhysicsSimulatorTool : HKTool
     bool freezeZRot;
     #endregion
 
+    System.Type proBuilderType;
+
     Scene scene;
     PhysicsScene physicsScene;
     bool hasScene = false;
 
     public override void Enter()
     {
+        proBuilderType = System.Type.GetType("UnityEngine.ProBuilder.ProBuilderMesh, Unity.ProBuilder");
+
         Selection.selectionChanged += EditorSelectionChanged;
         EditorApplication.playModeStateChanged += PlayModeChange;
 
@@ -450,7 +454,24 @@ public class HKPhysicsSimulatorTool : HKTool
                 foreach (Transform t in simulatedObjects)
                 {
                     GameObject go = GameObject.Instantiate(t.gameObject, t.position, t.rotation);
-                    if (!go.TryGetComponent(out Rigidbody rb)) rb = go.AddComponent<Rigidbody>();
+                    if (!go.TryGetComponent(out Rigidbody rb))
+                    {
+                        rb = go.AddComponent<Rigidbody>();
+
+                        rb.useGravity = useGravity;
+                        rb.mass = mass;
+                        rb.drag = drag;
+                        rb.angularDrag = angularDrag;
+
+                        RigidbodyConstraints constraints = RigidbodyConstraints.None;
+                        if (freezeXPos) constraints |= RigidbodyConstraints.FreezePositionX;
+                        if (freezeYPos) constraints |= RigidbodyConstraints.FreezePositionY;
+                        if (freezeZPos) constraints |= RigidbodyConstraints.FreezePositionZ;
+                        if (freezeXRot) constraints |= RigidbodyConstraints.FreezeRotationX;
+                        if (freezeYRot) constraints |= RigidbodyConstraints.FreezeRotationY;
+                        if (freezeZRot) constraints |= RigidbodyConstraints.FreezeRotationZ;
+                        rb.constraints = constraints;
+                    }
 
                     if (relativeVelocity)
                     {
@@ -462,20 +483,6 @@ public class HKPhysicsSimulatorTool : HKTool
                         rb.velocity = new Vector3(Random.Range(minVelocity.x, maxVelocity.x), Random.Range(minVelocity.y, maxVelocity.y), Random.Range(minVelocity.z, maxVelocity.z));
                         rb.angularVelocity = new Vector3(Random.Range(minAngularVelocity.x, maxAngularVelocity.x), Random.Range(minAngularVelocity.y, maxAngularVelocity.y), Random.Range(minAngularVelocity.z, maxAngularVelocity.z));
                     }
-
-                    rb.useGravity = useGravity;
-                    rb.mass = mass;
-                    rb.drag = drag;
-                    rb.angularDrag = angularDrag;
-
-                    RigidbodyConstraints constraints = RigidbodyConstraints.None;
-                    if (freezeXPos) constraints |= RigidbodyConstraints.FreezePositionX;
-                    if (freezeYPos) constraints |= RigidbodyConstraints.FreezePositionY;
-                    if (freezeZPos) constraints |= RigidbodyConstraints.FreezePositionZ;
-                    if (freezeXRot) constraints |= RigidbodyConstraints.FreezeRotationX;
-                    if (freezeYRot) constraints |= RigidbodyConstraints.FreezeRotationY;
-                    if (freezeZRot) constraints |= RigidbodyConstraints.FreezeRotationZ;
-                    rb.constraints = constraints;
 
                     simulatedObjectClones.Add(go.transform);
                     EditorSceneManager.MoveGameObjectToScene(go, scene);
@@ -548,6 +555,8 @@ public class HKPhysicsSimulatorTool : HKTool
 
         foreach (GameObject obj in sceneObjects)
         {
+            if (proBuilderType != null && obj.TryGetComponent(proBuilderType, out Component comp)) continue;
+
             GameObject go = GameObject.Instantiate(obj, obj.transform.position, obj.transform.rotation);
             if (go.TryGetComponent(out MeshRenderer renderer)) GameObject.DestroyImmediate(renderer);
             EditorSceneManager.MoveGameObjectToScene(go, scene);
@@ -597,6 +606,7 @@ public class HKPhysicsSimulatorTool : HKTool
         int GetAvailabilityStatusForTransform(Transform t)
         {
             if (t.gameObject.isStatic || !t.gameObject.activeSelf) return 2;
+            else if (proBuilderType != null && t.TryGetComponent(proBuilderType, out Component comp)) return 2;
 
             Rigidbody rb = t.GetComponent<Rigidbody>();
             Collider collider = t.GetComponent<Collider>();
@@ -650,11 +660,6 @@ public class HKPhysicsSimulatorTool : HKTool
 
             return Quaternion.Lerp(startPos, endPos, timelineProgress % progressPerKeyFrame / progressPerKeyFrame);
         }
-    }
-
-    StyleLength GetStyleLengthForPercentage(float percentage)
-    {
-        return new StyleLength(new Length(percentage, LengthUnit.Percent));
     }
 }
 
