@@ -38,9 +38,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Chromatic_Aberration: 1.5
+    - _Chromatic_Aberration: 1.25
+    - _JitterSpeed: 0.29
     - _Pixelization: 324.7
-    - _Pixelization_Quality: 350
+    - _Pixelization_Quality: 500
     - _Posterization: 250
     - _Quality: 300
     m_Colors:
