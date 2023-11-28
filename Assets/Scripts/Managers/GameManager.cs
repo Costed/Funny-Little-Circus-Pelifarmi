@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Manager[] managers;
     public ItemManager ItemManager => (ItemManager)managers[0];
     public CinematicManager CinematicManager => (CinematicManager)managers[1];
+    public SoundManager SoundManager => (SoundManager)managers[2];
 
     CheckpointSO currentCheckpoint;
 
