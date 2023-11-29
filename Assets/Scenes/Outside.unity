@@ -10432,6 +10432,11 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1709686646}
+    - target: {fileID: 2501493044566714841, guid: 91f8ad86e9679e54facc7dd47cd65394,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6985134816888910873, guid: 91f8ad86e9679e54facc7dd47cd65394,
         type: 3}
       propertyPath: m_LocalPosition.x
