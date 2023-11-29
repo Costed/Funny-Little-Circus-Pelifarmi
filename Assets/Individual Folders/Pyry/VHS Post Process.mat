@@ -41,9 +41,13 @@ Material:
     - _Chromatic_Aberration: 1.25
     - _JitterSpeed: 0.29
     - _Pixelization: 324.7
-    - _Pixelization_Quality: 500
+    - _Pixelization_Quality: 400
     - _Posterization: 250
     - _Quality: 300
+    - _ScanSpeed: 2
+    - _ScanStrength: 0.4
+    - _ScanlineSize: 8
     m_Colors:
     - _Color: {r: 1, g: 0.58431375, b: 0, a: 1}
+    - _Scanline_Color: {r: 0.05469002, g: 0.7924528, b: 0, a: 0}
   m_BuildTextureStacks: []
