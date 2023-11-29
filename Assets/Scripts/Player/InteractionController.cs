@@ -72,7 +72,9 @@ public class InteractionController : MonoBehaviour
                 {
                     GameManager.Singleton.ItemManager.RemoveItem(tempDuckKeyItem);
 
-                    Instantiate(keyPrefab, duckViewmodel.transform.position, duckViewmodel.transform.rotation);
+                    GameObject key = Instantiate(keyPrefab, duckViewmodel.transform.position, duckViewmodel.transform.rotation);
+                    key.AddComponent<Rigidbody>();
+
                     rodViewmodel.SetActive(false);
                     hasRod = false;
                 }

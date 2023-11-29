@@ -1,12 +1,11 @@
 using UnityEngine;
 using System;
-using Unity.VisualScripting;
-using static UnityEditor.Progress;
 
 public class InteractionActivator : MonoBehaviour, IInteractable
 {
     public event Action OnActivate;
 
+    public bool Interactable = true;
     [field:SerializeField] public float interactionTime {  get; private set; }
 
     [SerializeField] bool requireItem;
@@ -17,12 +16,16 @@ public class InteractionActivator : MonoBehaviour, IInteractable
     [SerializeField] bool doesntHaveItem;
     [SerializeField, ConditionalField(nameof(doesntHaveItem)), HideInInspector] ItemSO blacklistItem;
 
-    [SerializeField] bool allowOverriding;
-    [HideInInspector] public bool overrideCanInteract;
+    [SerializeField] bool overrideInteract;
+    [HideInInspector] public bool overrideValue;
+
+
+    public void SetInteractable(bool interactable) => Interactable = interactable;
 
     public bool CanInteract()
     {
-        if (allowOverriding) return overrideCanInteract;
+        if (!Interactable) return false;
+        if (overrideInteract) return overrideValue;
 
         if (doesntHaveItem && GameManager.Singleton.ItemManager.HasItem(blacklistItem)) return false;
 
@@ -67,8 +70,6 @@ public class InteractionActivator : MonoBehaviour, IInteractable
                     break;
                 }
             }
-
-            Debug.Log($"Activated, found item {firstItemInInventory.ID}");
 
             if (consume) GameManager.Singleton.ItemManager.RemoveItem(firstItemInInventory);
         }

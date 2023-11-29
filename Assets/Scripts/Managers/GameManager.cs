@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public ItemManager ItemManager => (ItemManager)managers[0];
     public CinematicManager CinematicManager => (CinematicManager)managers[1];
     public SoundManager SoundManager => (SoundManager)managers[2];
+    public SceneManager SceneManager => (SceneManager)managers[3];
+    public UIManager UIManager => (UIManager)managers[4];
 
     CheckpointSO currentCheckpoint;
 

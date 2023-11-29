@@ -23,7 +23,7 @@ public class FortuneTeller : MonoBehaviour
         anim = GetComponent<Animator>();
         animations[0] = Animator.StringToHash("Base Layer.SpitOutKey");
         //anim.Play(animations[0]);
-        crystalBallInteractor.overrideCanInteract = false;
+        crystalBallInteractor.overrideValue = false;
     }
 
 

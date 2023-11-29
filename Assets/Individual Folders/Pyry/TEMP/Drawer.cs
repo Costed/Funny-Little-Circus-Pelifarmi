@@ -15,7 +15,7 @@ public class Drawer : MonoBehaviour
     void Awake()
     {
         activatable = GetComponent<InteractionActivator>();
-        activatable.overrideCanInteract = true;
+        activatable.overrideValue = true;
         //activatable.OnActivate += Activated;
 
         animator = GetComponent<Animator>();
@@ -75,12 +75,12 @@ public class Drawer : MonoBehaviour
     IEnumerator AnimPlayingFlag()
     {
         //animPlaying = true;
-        activatable.overrideCanInteract = false;
+        activatable.overrideValue = false;
 
         if (open) yield return openWait;
         else yield return closeWait;
 
-        activatable.overrideCanInteract = true;
+        activatable.overrideValue = true;
 
         //animPlaying = false;
     }
