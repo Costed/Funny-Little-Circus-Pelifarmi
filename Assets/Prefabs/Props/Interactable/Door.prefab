@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8577766162529795448}
   m_Layer: 12
-  m_Name: Inter Door
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

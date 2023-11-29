@@ -215,7 +215,7 @@ MonoBehaviour:
   gravity: 1
   fallMultiplier: 1.3
   drag: 0
-  sphereCastRadius: 0.3
+  sphereCastRadius: 0.345
   sphereCastOffset: 0.1
   rayCastOffset: 0.05
 --- !u!114 &5772086568866262026
@@ -235,15 +235,18 @@ MonoBehaviour:
   interactionLayer:
     serializedVersion: 2
     m_Bits: 4609
-  rodObject: {fileID: 0}
-  duckObject: {fileID: 0}
-  duckObjectKey: {fileID: 0}
+  rodViewmodel: {fileID: 0}
+  duckViewmodel: {fileID: 0}
+  keyViewmodel: {fileID: 0}
   duckPrefab: {fileID: 4276963362971612394, guid: 807952578583d4746a82627c2c1c3b7b,
     type: 3}
-  duckKey: {fileID: 3123814456705428326, guid: 2e141c88aefd5a543bee929cecc54b5e, type: 3}
+  keyPrefab: {fileID: 0}
   rodItem: {fileID: 11400000, guid: 4a224d5433524b34f85bb825ac1588d9, type: 2}
   duckItem: {fileID: 11400000, guid: 419b7bf244a2f25459ca6e5b00292fa6, type: 2}
   tempDuckKeyItem: {fileID: 11400000, guid: 3198b6992d100e949b6e2c541bb50f2b, type: 2}
+  crosshair: {fileID: 0}
+  interactionIndicator: {fileID: 0}
+  interactionIndicatorDot: {fileID: 0}
 --- !u!1001 &1363788603553428249
 PrefabInstance:
   m_ObjectHideFlags: 0
