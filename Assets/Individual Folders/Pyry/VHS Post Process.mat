@@ -40,13 +40,20 @@ Material:
     m_Floats:
     - _Chromatic_Aberration: 1
     - _JitterSpeed: 0.29
+    - _Jitter_Speed: 0
+    - _Noise_Intensity: 40
     - _Pixelization: 324.7
-    - _Pixelization_Quality: 400
+    - _Pixelization_Quality: 450
     - _Posterization: 250
     - _Quality: 300
     - _ScanSpeed: 1.7
     - _ScanStrength: 0.3
+    - _Scan_Speed: 2
+    - _Scan_Strength: 0.3
     - _ScanlineSize: 8
+    - _Scanline_Size: 8
+    - _test: 0.003
+    - _test2: 0.003
     m_Colors:
     - _Color: {r: 1, g: 0.58431375, b: 0, a: 1}
     - _Scanline_Color: {r: 0.06863108, g: 0.3490566, b: 0.04774832, a: 0}
