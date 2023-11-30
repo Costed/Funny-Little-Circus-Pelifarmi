@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7443908717060916852}
   m_Layer: 0
-  m_Name: Crate Large
+  m_Name: inter Crate Largerr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,14 +314,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a4c838a929f174e8282d7e4c019e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Interactable: 1
   <interactionTime>k__BackingField: 0.5
   requireItem: 0
   consume: 0
   items: []
   doesntHaveItem: 0
   blacklistItem: {fileID: 0}
-  allowOverriding: 0
-  overrideCanInteract: 0
+  overrideInteract: 0
+  overrideValue: 0
 --- !u!114 &8570342574684672731
 MonoBehaviour:
   m_ObjectHideFlags: 0

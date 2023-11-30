@@ -570,7 +570,7 @@ Transform:
   m_GameObject: {fileID: 5259299804051566217}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.93024045, z: -0, w: 0.3669507}
-  m_LocalPosition: {x: -0.853, y: -0.295, z: 0.307}
+  m_LocalPosition: {x: -0.853, y: -0.247, z: 0.307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -724,7 +724,7 @@ Transform:
   m_GameObject: {fileID: 6215061157149442200}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.93024045, z: -0, w: 0.3669507}
-  m_LocalPosition: {x: 0.781, y: 0, z: -1.449}
+  m_LocalPosition: {x: 0.781, y: 0.012, z: -1.449}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1032,7 +1032,7 @@ Transform:
   m_GameObject: {fileID: 8234230988489943980}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.93024045, z: -0, w: 0.3669507}
-  m_LocalPosition: {x: -1.261, y: 0, z: -2.058}
+  m_LocalPosition: {x: -1.261, y: 0.016, z: -2.058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1555,6 +1555,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -1881266299693589927, guid: 50112061506b16845bda31b1d18196f8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: abd23180c559f9c4dbdf0685d0088c27, type: 2}
     - target: {fileID: -1451236209335155067, guid: 50112061506b16845bda31b1d18196f8,
         type: 3}
       propertyPath: m_StaticEditorFlags
