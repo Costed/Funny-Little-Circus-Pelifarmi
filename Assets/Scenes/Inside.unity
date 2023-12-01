@@ -4647,6 +4647,10 @@ PrefabInstance:
         type: 3}
       insertIndex: 9
       addedObject: {fileID: 463958574}
+    - targetCorrespondingSourceObject: {fileID: 4276963362971612394, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 463958584}
   m_SourcePrefab: {fileID: 100100000, guid: 1049ef37a6509f94db63121fc32f390e, type: 3}
 --- !u!4 &463958564 stripped
 Transform:
@@ -4687,6 +4691,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 3198b6992d100e949b6e2c541bb50f2b, type: 2}
+--- !u!114 &463958584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463958565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  soundEffects:
+  - {fileID: 8300000, guid: 75eb7a06c5606dc43a43e73034bba1af, type: 3}
+  blend2D3D: 1
+  volume: 1
 --- !u!1001 &466358448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5125,6 +5146,29 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f397bbcdffdc4a4e851bba5168ea94b, type: 3}
+--- !u!1 &617684191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8200671305579024168, guid: 63018a3332a6c3940808de776d226e95,
+    type: 3}
+  m_PrefabInstance: {fileID: 2005971135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &617684199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617684191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  soundEffects:
+  - {fileID: 8300000, guid: fbb2c216dad4b6046b0906575ce5a4f1, type: 3}
+  blend2D3D: 1
+  volume: 1
 --- !u!1001 &622252546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7013,6 +7057,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 958017293}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bff92e58eb3b79341afe7af8bdffe5cc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 958017299}
   m_SourcePrefab: {fileID: 100100000, guid: bff92e58eb3b79341afe7af8bdffe5cc, type: 3}
 --- !u!1001 &942475969
 PrefabInstance:
@@ -7187,6 +7235,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.10580124, y: 0.7741312, z: 0.14132988}
   m_Center: {x: 0.000000007916242, y: 0.3404969, z: -0.0017485172}
+--- !u!114 &958017299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958017289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  soundEffects:
+  - {fileID: 8300000, guid: cb15b219fc6638648bf71e4914c2c51e, type: 3}
+  blend2D3D: 1
+  volume: 0.1
 --- !u!4 &959736336 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7601745718679758361, guid: c3c675401e327674d8e226e727f07ec2,
@@ -16480,7 +16545,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8200671305579024168, guid: 63018a3332a6c3940808de776d226e95,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 617684199}
   m_SourcePrefab: {fileID: 100100000, guid: 63018a3332a6c3940808de776d226e95, type: 3}
 --- !u!4 &2005971136 stripped
 Transform:
