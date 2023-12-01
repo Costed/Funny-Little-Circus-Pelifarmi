@@ -1,8 +1,8 @@
-using UnityEngine.Audio;
 using HietakissaUtils;
 using UnityEngine;
+using UnityEngine.Audio;
 
-public class PlaySoundEffectOnActivation : ActionOnActivation
+public class PlaySoundEffectManual : MonoBehaviour
 {
     [SerializeField] AudioMixerGroup mixerGroup;
     [SerializeField] AudioClip[] soundEffects;
@@ -10,7 +10,7 @@ public class PlaySoundEffectOnActivation : ActionOnActivation
     [SerializeField, Range(0f, 1f)] float volume = 1f;
 
 
-    public override void Activated()
+    public void PlaySoundRandomEffect()
     {
         GameManager.Singleton.SoundManager.PlaySoundEffectAtPosition(transform.position, soundEffects.RandomElement(), volume, blend2D3D, mixerGroup);
     }

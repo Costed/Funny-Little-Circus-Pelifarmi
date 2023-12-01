@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : Manager
 {
@@ -25,12 +26,16 @@ public class SoundManager : Manager
         }
     }
 
-    public void PlaySoundEffectAtPosition(Vector3 position, AudioClip soundEffect)
+    public void PlaySoundEffectAtPosition(Vector3 position, AudioClip soundEffect, float volume = 1f, float spatialBlend = 1f, AudioMixerGroup mixerGroup = null)
     {
         soundTransforms[audioIndex].position = position;
         AudioSource source = soundSources[audioIndex];
         source.clip = soundEffect;
         source.pitch = GetPitch();
+        source.volume = volume;
+        source.spatialBlend = spatialBlend;
+        if (mixerGroup != null) source.outputAudioMixerGroup = mixerGroup;
+
         source.Play();
 
         audioIndex++;

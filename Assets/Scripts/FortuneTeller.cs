@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class FortuneTeller : MonoBehaviour
@@ -16,6 +17,8 @@ public class FortuneTeller : MonoBehaviour
     Dictionary<int, int> animations = new Dictionary<int, int>();
 
     int parts;
+
+    [SerializeField] UnityEvent onAllPartsCollected;
 
 
     void Awake()
@@ -62,6 +65,10 @@ public class FortuneTeller : MonoBehaviour
 
         parts++;
         //if (parts == 4) crystalBallInteractor.overrideCanInteract = true;
-        if (parts == 4) crystalBallInteractor.gameObject.SetActive(true);
+        if (parts == 4)
+        {
+            onAllPartsCollected?.Invoke();
+            crystalBallInteractor.gameObject.SetActive(true);
+        }
     }
 }
