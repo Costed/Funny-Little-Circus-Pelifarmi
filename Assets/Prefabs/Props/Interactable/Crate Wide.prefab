@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 2551866367279267110, guid: fdd480ab85508824aa19bc2c3e7d6162,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -314,14 +314,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a4c838a929f174e8282d7e4c019e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Interactable: 1
   <interactionTime>k__BackingField: 0.5
   requireItem: 0
   consume: 0
   items: []
   doesntHaveItem: 0
   blacklistItem: {fileID: 0}
-  allowOverriding: 0
-  overrideCanInteract: 0
+  overrideInteract: 0
+  overrideValue: 0
 --- !u!114 &1137176021976119611
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,10 +40,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4023892341611832968}
     m_Modifications:
+    - target: {fileID: 240885984046177498, guid: 358260604cca3894287244b8f04e0760,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 744732148967175996, guid: 358260604cca3894287244b8f04e0760,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434454498305362795, guid: 358260604cca3894287244b8f04e0760,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2956775890588981816, guid: 358260604cca3894287244b8f04e0760,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740313845358315371, guid: 358260604cca3894287244b8f04e0760,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7825031314638466629, guid: 358260604cca3894287244b8f04e0760,
         type: 3}

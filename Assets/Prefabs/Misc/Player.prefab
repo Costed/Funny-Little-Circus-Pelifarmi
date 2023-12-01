@@ -244,7 +244,10 @@ MonoBehaviour:
   rodItem: {fileID: 11400000, guid: 4a224d5433524b34f85bb825ac1588d9, type: 2}
   duckItem: {fileID: 11400000, guid: 419b7bf244a2f25459ca6e5b00292fa6, type: 2}
   tempDuckKeyItem: {fileID: 11400000, guid: 3198b6992d100e949b6e2c541bb50f2b, type: 2}
+  normalColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+  cantInteractColor: {r: 1, g: 1, b: 1, a: 1}
   crosshair: {fileID: 0}
+  crosshairDot: {fileID: 0}
   interactionIndicator: {fileID: 0}
   interactionIndicatorDot: {fileID: 0}
 --- !u!1001 &1363788603553428249

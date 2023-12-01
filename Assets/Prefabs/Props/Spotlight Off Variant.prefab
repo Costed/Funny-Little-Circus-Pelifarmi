@@ -69,7 +69,8 @@ PrefabInstance:
       value: Spotlight Off Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5955003060874451409, guid: d019d4b10d3ef174aaa53f5ac83d3ad4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d019d4b10d3ef174aaa53f5ac83d3ad4, type: 3}
