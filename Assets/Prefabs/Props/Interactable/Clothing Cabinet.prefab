@@ -346,6 +346,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8861756966628734554}
+    - targetCorrespondingSourceObject: {fileID: -5010088443613343201, guid: a469d378d710441469238896632bb488,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6129214378920167664}
     - targetCorrespondingSourceObject: {fileID: 6224618723074713535, guid: a469d378d710441469238896632bb488,
         type: 3}
       insertIndex: -1
@@ -358,6 +362,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3318564248859482978}
+    - targetCorrespondingSourceObject: {fileID: 6224618723074713535, guid: a469d378d710441469238896632bb488,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6977968088748120795}
   m_SourcePrefab: {fileID: 100100000, guid: a469d378d710441469238896632bb488, type: 3}
 --- !u!1 &1806653410032709466 stripped
 GameObject:
@@ -434,6 +442,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6129214378920167664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806653410032709466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  soundEffects:
+  - {fileID: 8300000, guid: 9d4d2926b54dddf45b346c2e2c56fa60, type: 3}
+  blend2D3D: 1
+  volume: 0.1
 --- !u!4 &2657312706207488686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a469d378d710441469238896632bb488,
@@ -618,3 +643,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6977968088748120795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8433090432753294074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  soundEffects:
+  - {fileID: 8300000, guid: 9d4d2926b54dddf45b346c2e2c56fa60, type: 3}
+  blend2D3D: 1
+  volume: 0.1
