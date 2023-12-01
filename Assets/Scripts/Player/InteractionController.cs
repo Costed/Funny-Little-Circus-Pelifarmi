@@ -29,7 +29,10 @@ public class InteractionController : MonoBehaviour
     float interactionTime;
 
     [Header("UI")]
+    [SerializeField] Color normalColor;
+    [SerializeField] Color cantInteractColor;
     [SerializeField] RectTransform crosshair;
+    [SerializeField] Image crosshairDot;
     [SerializeField] RectTransform interactionIndicator;
     [SerializeField] RectTransform interactionIndicatorDot;
 
@@ -121,6 +124,8 @@ public class InteractionController : MonoBehaviour
 
         if (interactable && interactable.CanInteract())
         {
+            //looking at interactable and can interact
+
             interactionIndicator.gameObject.SetActive(true);
             crosshair.gameObject.SetActive(false);
 
@@ -128,10 +133,21 @@ public class InteractionController : MonoBehaviour
             float sizeMultiplier = interactionTime / (interactable.interactionTime == 0f ? 1f : interactable.interactionTime);
             interactionIndicatorDot.localScale = baseSize * sizeMultiplier;
         }
-        else
+        else if (interactable) 
         {
+            //looking at interactable but can't interact
+
             interactionIndicator.gameObject.SetActive(false);
             crosshair.gameObject.SetActive(true);
+            crosshairDot.color = cantInteractColor;
+        }
+        else
+        {
+            //not looking at interactable
+
+            interactionIndicator.gameObject.SetActive(false);
+            crosshair.gameObject.SetActive(true);
+            crosshairDot.color = normalColor;
         }
 
 
