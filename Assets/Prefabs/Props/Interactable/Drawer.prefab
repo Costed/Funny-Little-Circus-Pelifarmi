@@ -338,7 +338,7 @@ MonoBehaviour:
   soundEffects:
   - {fileID: 8300000, guid: 718bbd50c3f406544bfa916001dac76d, type: 3}
   blend2D3D: 1
-  volume: 0.1
+  volume: 0.2
 --- !u!1 &7904035811909188381 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4762156614353265637, guid: 67935c4add13b2b49928435b465fd764,
@@ -488,4 +488,4 @@ MonoBehaviour:
   soundEffects:
   - {fileID: 8300000, guid: 718bbd50c3f406544bfa916001dac76d, type: 3}
   blend2D3D: 1
-  volume: 0.1
+  volume: 0.2
