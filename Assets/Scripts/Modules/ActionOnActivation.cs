@@ -2,15 +2,26 @@ using UnityEngine;
 
 public abstract class ActionOnActivation : MonoBehaviour
 {
-    IActivatable activatable;
+    IActivatable[] activatables;
     void OnEnable()
     {
-        activatable = GetComponent<IActivatable>();
-        if (activatable != null) activatable.OnActivate += Activated;
+        activatables = GetComponents<IActivatable>();
+
+        if (activatables != null )
+        {
+            foreach (IActivatable activatable in activatables) activatable.OnActivate += Activated;
+        }
+
+        //if (activatable != null) activatable.OnActivate += Activated;
     }
     void OnDisable()
     {
-        if (activatable != null) activatable.OnActivate -= Activated;
+        if (activatables != null)
+        {
+            foreach (IActivatable activatable in activatables) activatable.OnActivate += Activated;
+        }
+
+        //if (activatable != null) activatable.OnActivate -= Activated;
     }
 
     public abstract void Activated();
