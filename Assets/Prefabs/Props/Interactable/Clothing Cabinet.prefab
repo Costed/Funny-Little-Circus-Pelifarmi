@@ -458,7 +458,7 @@ MonoBehaviour:
   soundEffects:
   - {fileID: 8300000, guid: 9d4d2926b54dddf45b346c2e2c56fa60, type: 3}
   blend2D3D: 1
-  volume: 0.1
+  volume: 0.2
 --- !u!4 &2657312706207488686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a469d378d710441469238896632bb488,
@@ -659,4 +659,4 @@ MonoBehaviour:
   soundEffects:
   - {fileID: 8300000, guid: 9d4d2926b54dddf45b346c2e2c56fa60, type: 3}
   blend2D3D: 1
-  volume: 0.1
+  volume: 0.2
