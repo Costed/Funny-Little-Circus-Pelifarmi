@@ -84,8 +84,8 @@ public class DuckController : MonoBehaviour
         rb.AddTorque(axis.normalized * angle * torque * Time.deltaTime, ForceMode.Acceleration);
 
         Vector3 direction = GetDirOnPath();
-        direction = Vector3.Lerp(direction, -transform.forward, 0.5f);
-        difference = Quaternion.FromToRotation(-transform.forward, direction);
+        direction = Vector3.Lerp(direction, transform.forward, 0.5f);
+        difference = Quaternion.FromToRotation(transform.forward, direction);
         difference.ToAngleAxis(out angle, out axis);
 
         rb.AddTorque(axis.normalized * angle * torque * Time.deltaTime, ForceMode.Acceleration);
