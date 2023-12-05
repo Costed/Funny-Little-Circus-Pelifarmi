@@ -307,6 +307,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7825060479622980915}
+        m_TargetAssemblyTypeName: ManualActivator, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   falseEvent:
     m_PersistentCalls:
       m_Calls:
@@ -437,6 +449,7 @@ GameObject:
   - component: {fileID: 797590599143596030}
   - component: {fileID: 2540875820421360208}
   - component: {fileID: 3561557937691103535}
+  - component: {fileID: 7825060479622980915}
   - component: {fileID: 3530147659601996914}
   - component: {fileID: 2262393760631639433}
   m_Layer: 12
@@ -554,6 +567,18 @@ MonoBehaviour:
   blacklistItem: {fileID: 0}
   overrideInteract: 0
   overrideValue: 0
+--- !u!114 &7825060479622980915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9089817768799616990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4f5dbf6750bce499ca8f43c9c96f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3530147659601996914
 MonoBehaviour:
   m_ObjectHideFlags: 0
