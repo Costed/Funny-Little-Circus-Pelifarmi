@@ -141,4 +141,4 @@ MonoBehaviour:
   soundEffects:
   - {fileID: 8300000, guid: 718bbd50c3f406544bfa916001dac76d, type: 3}
   blend2D3D: 1
-  volume: 0.1
+  volume: 0.2
