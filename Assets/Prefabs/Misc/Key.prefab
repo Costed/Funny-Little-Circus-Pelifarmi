@@ -206,5 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
   soundEffects:
   - {fileID: 8300000, guid: 6fffb420008021f4a946f35197bac9e5, type: 3}
+  blend2D3D: 1
+  volume: 0.8
