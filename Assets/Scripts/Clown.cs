@@ -1,5 +1,6 @@
 using UnityEngine.AI;
 using UnityEngine;
+using System.Collections;
 
 [SelectionBase]
 public class Clown : MonoBehaviour
@@ -57,8 +58,24 @@ public class Clown : MonoBehaviour
     [ContextMenu("End Chase")]
     public void EndChase()
     {
+        //agent.enabled = false;
+        //chasing = false;
+        //
+        //transform.position = startPos;
+        //transform.rotation = startRot;
+
+        StartCoroutine(EndChaseCor());
+    }
+
+    IEnumerator EndChaseCor()
+    {
+        agent.destination = startPos;
+        agent.speed = speed * 2.5f;
+
+        while (Vector3.Distance(transform.position, startPos) > 0.3f) yield return null;
+
         agent.enabled = false;
-        chasing = false;
+        agent.speed = speed;
 
         transform.position = startPos;
         transform.rotation = startRot;
