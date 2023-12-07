@@ -228,6 +228,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8570342574684672731}
+    - targetCorrespondingSourceObject: {fileID: 9072404643658750284, guid: d21416da0b3261f4285f477ef2bc6dad,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5712654698052289800}
   m_SourcePrefab: {fileID: 100100000, guid: d21416da0b3261f4285f477ef2bc6dad, type: 3}
 --- !u!4 &2618950463076384726 stripped
 Transform:
@@ -374,3 +378,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   defaultState: 0
+--- !u!114 &5712654698052289800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6788471770784203121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  soundEffects:
+  - {fileID: 8300000, guid: 62f7a40eb856bf44da1e8c9e4e732faa, type: 3}
+  blend2D3D: 1
+  volume: 0.2
