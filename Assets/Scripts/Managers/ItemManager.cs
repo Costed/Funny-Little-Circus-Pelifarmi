@@ -17,6 +17,11 @@ public class ItemManager : Manager
         tempInventory.Add(item.ID);
         OnItemAdded?.Invoke(item.ID);
     }
+    public void AddItem(int itemID)
+    {
+        tempInventory.Add(itemID);
+        OnItemAdded?.Invoke(itemID);
+    }
 
     public void RemoveItem(ItemSO item)
     {

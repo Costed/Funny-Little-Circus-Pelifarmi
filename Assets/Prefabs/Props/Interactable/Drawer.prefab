@@ -158,6 +158,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8234775903692007317}
+    - targetCorrespondingSourceObject: {fileID: 937562354048335028, guid: 67935c4add13b2b49928435b465fd764,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2043445587348009127}
     - targetCorrespondingSourceObject: {fileID: 4762156614353265637, guid: 67935c4add13b2b49928435b465fd764,
         type: 3}
       insertIndex: -1
@@ -183,6 +187,33 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7920928684700031786}
   m_SourcePrefab: {fileID: 100100000, guid: 67935c4add13b2b49928435b465fd764, type: 3}
+--- !u!1 &2496315232696788044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 937562354048335028, guid: 67935c4add13b2b49928435b465fd764,
+    type: 3}
+  m_PrefabInstance: {fileID: 3433522493873035512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2043445587348009127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2496315232696788044}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 1.3093562, z: 1.2503431}
+  m_Center: {x: -0.0000009536743, y: -0.35321602, z: 0.000001937151}
 --- !u!4 &2894948116264451859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67935c4add13b2b49928435b465fd764,
@@ -214,8 +245,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7814212, y: 0.43107343, z: 1.1005312}
-  m_Center: {x: 3.4060262e-15, y: -0.55552864, z: 0.11199097}
+  m_Size: {x: 1.7814212, y: 0.43107343, z: 1.1269064}
+  m_Center: {x: -0.000000014116693, y: -0.55552864, z: 0.12517862}
 --- !u!95 &2975060392698906142
 Animator:
   serializedVersion: 5
@@ -364,8 +395,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7814212, y: 0.43107343, z: 1.1005312}
-  m_Center: {x: 3.4060262e-15, y: -0.05, z: 0.11199097}
+  m_Size: {x: 1.7814212, y: 0.43107343, z: 1.1418679}
+  m_Center: {x: -0.000000012483642, y: -0.050000012, z: 0.13265933}
 --- !u!95 &7354985072292083853
 Animator:
   serializedVersion: 5

@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using HietakissaUtils.Commands;
 
 public class InteractionController : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class InteractionController : MonoBehaviour
 
     bool holdingInteract;
 
+
     void ItemAdded(int itemID)
     {
         if (itemID == rodItem.ID)
@@ -60,6 +62,12 @@ public class InteractionController : MonoBehaviour
             duckViewmodel.SetActive(false);
             hasDuck = false;
         }
+    }
+
+
+    void Awake()
+    {
+        CommandSystem.AddCommand(new DebugCommand<int>("AddItem", (itemID) => GameManager.Singleton.ItemManager.AddItem(itemID)));
     }
 
     void Update()

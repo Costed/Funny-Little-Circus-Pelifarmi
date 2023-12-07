@@ -17,6 +17,13 @@ public class Clown : MonoBehaviour
 
     Transform playerTransform;
 
+    const float maxChaseEndTime = 5f;
+    float chaseEndTime;
+
+    float timeShutOff;
+
+    bool oldHasPath;
+
 
     void Awake()
     {
@@ -36,15 +43,34 @@ public class Clown : MonoBehaviour
 
     void Update()
     {
-        if (chasing) agent.SetDestination(playerTransform.position);
+        if (!chasing) return;
+
+        agent.SetDestination(playerTransform.position);
+
+        bool hasPath = agent.hasPath;
+
+        
+
+        if (hasPath == oldHasPath)
+        {
+            if (hasPath) timeShutOff = 0f;
+            else timeShutOff += Time.deltaTime;
+        }
+
+
+        NavMeshPath path = new NavMeshPath();
+        agent.CalculatePath(playerTransform.position, path);
+        Debug.Log($"{timeShutOff}, {Vector3.Distance(playerTransform.position, path.corners[^1]) < 0.2f}");
 
         if (Vector3.Distance(transform.position, playerTransform.position) <= catchRange) CatchPlayer();
+
+        oldHasPath = hasPath;
     }
 
 
     void CatchPlayer()
     {
-        EndChase();
+        if (chasing) EndChase();
         GameManager.Singleton.LoadCheckpoint();
     }
 
@@ -69,10 +95,18 @@ public class Clown : MonoBehaviour
 
     IEnumerator EndChaseCor()
     {
+        chasing = false;
+
         agent.destination = startPos;
         agent.speed = speed * 2.5f;
 
-        while (Vector3.Distance(transform.position, startPos) > 0.3f) yield return null;
+        while (Vector3.Distance(transform.position, startPos) > 0.3f)
+        {
+            chaseEndTime += Time.deltaTime;
+            if (chaseEndTime >= maxChaseEndTime) break;
+
+            yield return null;
+        }
 
         agent.enabled = false;
         agent.speed = speed;
