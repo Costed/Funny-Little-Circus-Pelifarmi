@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactable: 1
-  <interactionTime>k__BackingField: 3
+  <interactionTime>k__BackingField: 1
   requireItem: 1
   consume: 1
   items:
@@ -560,7 +560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interactable: 0
-  <interactionTime>k__BackingField: 1
+  <interactionTime>k__BackingField: 0.7
   requireItem: 0
   consume: 0
   items: []

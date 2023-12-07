@@ -8,12 +8,6 @@ public class SceneManager : Manager
 
     public void LoadScene(string sceneName)
     {
-        if (!UnityEngine.SceneManagement.SceneManager.GetSceneByName(sceneName).IsValid())
-        {
-            Debug.Log($"Could not find scene with name '{sceneName}'");
-            return;
-        }
-
         StartCoroutine(LoadSceneCor(sceneName));
     }
 

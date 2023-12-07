@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &246556543242703268
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3463553059663654480, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.95957
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463553059663654480, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0245007
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463553059663654480, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.2321167
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463553059663654480, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463553059663654480, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463553059663654480, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463553059663654480, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463553059663654480, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463553059663654480, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463553059663654480, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4276963362971612394, guid: 1049ef37a6509f94db63121fc32f390e,
+        type: 3}
+      propertyPath: m_Name
+      value: Duck No Brain Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7928738755790045036, guid: 1049ef37a6509f94db63121fc32f390e, type: 3}
+    - {fileID: 8257668187007787133, guid: 1049ef37a6509f94db63121fc32f390e, type: 3}
+    - {fileID: 2686810575261318049, guid: 1049ef37a6509f94db63121fc32f390e, type: 3}
+    - {fileID: 2783123318210975759, guid: 1049ef37a6509f94db63121fc32f390e, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1049ef37a6509f94db63121fc32f390e, type: 3}
