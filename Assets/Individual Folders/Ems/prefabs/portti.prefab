@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7181541036631537726
 Transform:
@@ -98,7 +98,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6334157334451729735
 Transform:
@@ -159,7 +159,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4361556687971928253
 Transform:
@@ -289,6 +289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lukko yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 3014469960303545207, guid: 43455a89b9fb05540bea582e67c4fcb2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -362,6 +367,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lukko blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951122859775940790, guid: 1b15bc5b09881e4479d8f2043be241bb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -437,6 +447,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lukko red
       objectReference: {fileID: 0}
+    - target: {fileID: 7079308492270936067, guid: 409bdbedfcca8b54d8682d215b4dcad6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -460,6 +475,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lukko green
+      objectReference: {fileID: 0}
+    - target: {fileID: 939314888515723401, guid: 8c9596c3e181e7b418de01bb145cae00,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7403972779722344148, guid: 8c9596c3e181e7b418de01bb145cae00,
         type: 3}

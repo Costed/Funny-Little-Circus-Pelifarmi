@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: spottivalo
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 748eb9033294f884fba1998453758d3e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 953634934712057949, guid: 748eb9033294f884fba1998453758d3e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -78,11 +83,31 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: abd23180c559f9c4dbdf0685d0088c27, type: 2}
+    - target: {fileID: 4891045224255541239, guid: 748eb9033294f884fba1998453758d3e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5934340220297793163, guid: 748eb9033294f884fba1998453758d3e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 497bdcb0f34746249babbab966eca770, type: 2}
+    - target: {fileID: 7039071772629405170, guid: 748eb9033294f884fba1998453758d3e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428319229878702748, guid: 748eb9033294f884fba1998453758d3e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816235756077617403, guid: 748eb9033294f884fba1998453758d3e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

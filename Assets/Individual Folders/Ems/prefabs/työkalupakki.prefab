@@ -63,16 +63,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4708765633153376163, guid: b1e29b2f61ea9984a9ee679755bc0d33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b1e29b2f61ea9984a9ee679755bc0d33,
         type: 3}
       propertyPath: m_Name
       value: "ty\xF6kalupakki"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b1e29b2f61ea9984a9ee679755bc0d33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306860183719753762, guid: b1e29b2f61ea9984a9ee679755bc0d33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3715766163296871008, guid: b1e29b2f61ea9984a9ee679755bc0d33,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d57267d5d0092fe41b77d7cbc3cd90ce, type: 2}
+    - target: {fileID: 4031760988427553229, guid: b1e29b2f61ea9984a9ee679755bc0d33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6356714393301739294, guid: b1e29b2f61ea9984a9ee679755bc0d33,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

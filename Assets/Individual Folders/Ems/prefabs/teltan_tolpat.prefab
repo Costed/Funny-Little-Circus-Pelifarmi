@@ -68,6 +68,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8137d51b4eb94ff45ab732a253ce644f, type: 2}
+    - target: {fileID: -4141962172591323511, guid: b4d03f3632835074a9624a3a4f6b3a33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -3165688131639610551, guid: b4d03f3632835074a9624a3a4f6b3a33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -2007162048457070449, guid: b4d03f3632835074a9624a3a4f6b3a33,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -83,10 +93,30 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8137d51b4eb94ff45ab732a253ce644f, type: 2}
+    - target: {fileID: -159125583307963487, guid: b4d03f3632835074a9624a3a4f6b3a33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b4d03f3632835074a9624a3a4f6b3a33,
         type: 3}
       propertyPath: m_Name
       value: teltan_tolpat
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b4d03f3632835074a9624a3a4f6b3a33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365497510011669535, guid: b4d03f3632835074a9624a3a4f6b3a33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239288137303993585, guid: b4d03f3632835074a9624a3a4f6b3a33,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

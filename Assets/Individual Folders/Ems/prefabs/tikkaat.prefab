@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tikkaat
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 175da09d8f8535d4ab5fc645605ea535,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
