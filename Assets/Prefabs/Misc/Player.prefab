@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 7039581798552898381}
   - component: {fileID: 6223306724149067918}
   - component: {fileID: 5772086568866262026}
+  - component: {fileID: 8157465620016883045}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   runMultiplier: 1.3
-  jumpForce: 3
+  jumpForce: 3.5
   crouchHeight: 1.4
   keepCrouchPressedAirborne: 0
   gravity: 1
@@ -250,6 +251,25 @@ MonoBehaviour:
   crosshairDot: {fileID: 0}
   interactionIndicator: {fileID: 0}
   interactionIndicatorDot: {fileID: 0}
+--- !u!114 &8157465620016883045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6389456964435063429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab5f15fbde35de4999e23512d3fcf5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultClips:
+  - {fileID: 8300000, guid: 0a2df6244199c884996d85cedb4d1409, type: 3}
+  footstepTypes:
+  - surface: Box
+    footstepSounds:
+    - {fileID: 8300000, guid: c4b2822f5eab6df40b3e6f79943cc26c, type: 3}
+  distancePerStep: 2
 --- !u!1001 &1363788603553428249
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,6 +17,8 @@ MonoBehaviour:
   - <requiredCompletion>k__BackingField: 1
     <taskName>k__BackingField: Investigate The Area
   - <requiredCompletion>k__BackingField: 1
-    <taskName>k__BackingField: Collect The Key
+    <taskName>k__BackingField: Find a Way to Turn on The Power
+  - <requiredCompletion>k__BackingField: 1
+    <taskName>k__BackingField: Get to The Ticket Booth
   - <requiredCompletion>k__BackingField: 1
     <taskName>k__BackingField: Get Inside
