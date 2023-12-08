@@ -72,8 +72,8 @@ public class InteractionController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) holdingInteract = true;
-        else if (Input.GetKeyUp(KeyCode.E)) holdingInteract = false;
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)) holdingInteract = true;
+        else if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0)) holdingInteract = false;
 
         if (Input.GetKeyDown(KeyCode.E))
         {
