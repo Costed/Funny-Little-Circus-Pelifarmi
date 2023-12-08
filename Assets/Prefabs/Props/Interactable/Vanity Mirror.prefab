@@ -115,16 +115,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5426434032299119894}
     m_Modifications:
+    - target: {fileID: 309328490924337357, guid: 1f16039c50c17154fb25fe227359e477,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4104a3ed4edb0464b85bd96e1c2e12f2, type: 2}
     - target: {fileID: 2398079682653526456, guid: 1f16039c50c17154fb25fe227359e477,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3652034833685185086, guid: 1f16039c50c17154fb25fe227359e477,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5076552616606898351, guid: e33b5c0a8d3b7214698c58582f5dff96,
+        type: 3}
     - target: {fileID: 3672881443655873618, guid: 1f16039c50c17154fb25fe227359e477,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4100161939913018782, guid: 1f16039c50c17154fb25fe227359e477,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -4368899088677718975, guid: e33b5c0a8d3b7214698c58582f5dff96,
+        type: 3}
     - target: {fileID: 5177806809452208027, guid: 1f16039c50c17154fb25fe227359e477,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -185,6 +202,12 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 5900221442289709284, guid: 1f16039c50c17154fb25fe227359e477,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3255586418440854537, guid: e33b5c0a8d3b7214698c58582f5dff96,
+        type: 3}
     - target: {fileID: 6361594326487363836, guid: 1f16039c50c17154fb25fe227359e477,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -195,6 +218,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 6955413239405159567, guid: 1f16039c50c17154fb25fe227359e477,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e168266ab62d85458e6daa01073faa7, type: 2}
     m_RemovedComponents:
     - {fileID: 1979138110768169042, guid: 1f16039c50c17154fb25fe227359e477, type: 3}
     m_RemovedGameObjects: []
@@ -256,8 +284,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.72, y: 0.25600684, z: 0.09365058}
-  m_Center: {x: 0.015352368, y: 0.99684507, z: 0.78211033}
+  m_Size: {x: 1.72, y: 0.25600684, z: 0.099946976}
+  m_Center: {x: 0.015352368, y: 0.99684507, z: 0.6505728}
 --- !u!95 &4196901956753607108
 Animator:
   serializedVersion: 5

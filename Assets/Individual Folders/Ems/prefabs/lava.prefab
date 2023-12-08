@@ -58,10 +58,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8341595250129989173, guid: 7472eaf0b8f0cef43961bafc553f410a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7472eaf0b8f0cef43961bafc553f410a,
         type: 3}
       propertyPath: m_Name
       value: lava
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7472eaf0b8f0cef43961bafc553f410a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6123078860939413168, guid: 7472eaf0b8f0cef43961bafc553f410a,
         type: 3}

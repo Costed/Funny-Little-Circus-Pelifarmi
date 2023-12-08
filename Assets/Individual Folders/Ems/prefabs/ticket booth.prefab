@@ -63,21 +63,46 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 182497b0922ec314caea6403dad4b913, type: 2}
+    - target: {fileID: -7077250335557796095, guid: ec45b6e2911c7b34d84105827b8d1b0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: ec45b6e2911c7b34d84105827b8d1b0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -7024212990335110722, guid: ec45b6e2911c7b34d84105827b8d1b0b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a599fd64ab91ef7439c802fabce21357, type: 2}
+    - target: {fileID: -6390293229071599928, guid: ec45b6e2911c7b34d84105827b8d1b0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -6309416740906894344, guid: ec45b6e2911c7b34d84105827b8d1b0b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 424d8925c07d50546858bc0541cbcc5f, type: 2}
+    - target: {fileID: -4557200241747995647, guid: ec45b6e2911c7b34d84105827b8d1b0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -4531894244380183588, guid: ec45b6e2911c7b34d84105827b8d1b0b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 424d8925c07d50546858bc0541cbcc5f, type: 2}
+    - target: {fileID: -1693477206651100368, guid: ec45b6e2911c7b34d84105827b8d1b0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 276082364061978409, guid: ec45b6e2911c7b34d84105827b8d1b0b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -88,11 +113,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ticket booth
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec45b6e2911c7b34d84105827b8d1b0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2255566146745886696, guid: ec45b6e2911c7b34d84105827b8d1b0b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d57267d5d0092fe41b77d7cbc3cd90ce, type: 2}
+    - target: {fileID: 4034929185102724144, guid: ec45b6e2911c7b34d84105827b8d1b0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366266842701513194, guid: ec45b6e2911c7b34d84105827b8d1b0b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8298465214510144652, guid: ec45b6e2911c7b34d84105827b8d1b0b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
