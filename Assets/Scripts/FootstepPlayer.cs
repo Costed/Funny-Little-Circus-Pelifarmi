@@ -28,8 +28,6 @@ public class FootstepPlayer : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(distance);
-
         if (Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, out RaycastHit hit, 0.3f))
         {
             distance += Vector3.Distance(transform.position, oldPos);
@@ -37,7 +35,8 @@ public class FootstepPlayer : MonoBehaviour
             AudioClip clip;
             if (hit.collider.TryGetComponent(out FootstepSurface surface))
             {
-                clip = stepsForSurface[surface.surfaceType].RandomElement();
+                if (stepsForSurface.ContainsKey(surface.surfaceType)) clip = stepsForSurface[surface.surfaceType].RandomElement();
+                else clip = defaultClips.RandomElement();
             }
             else clip = defaultClips.RandomElement();
 

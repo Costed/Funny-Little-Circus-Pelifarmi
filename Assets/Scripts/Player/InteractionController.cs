@@ -75,7 +75,7 @@ public class InteractionController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)) holdingInteract = true;
         else if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0)) holdingInteract = false;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
         {
             if (hasRod && hasDuck)
             {

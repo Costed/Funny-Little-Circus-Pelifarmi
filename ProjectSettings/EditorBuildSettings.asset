@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Outside.unity
+    guid: a1f7aad031aacec498ad4e3c32eed721
+  - enabled: 1
     path: Assets/Scenes/Inside.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Outside_Chase.unity
+    guid: 0adcbec032f256d48ae7af2d7139fd02
   m_configObjects: {}

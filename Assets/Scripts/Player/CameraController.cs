@@ -9,11 +9,15 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] float maxLookAngle = 90f;
 
+    Camera cam;
+
     Transform holder;
 
     float xRot, yRot;
 
     new bool enabled = true;
+
+    float FOV;
 
     void OnValidate()
     {
@@ -24,6 +28,8 @@ public class CameraController : MonoBehaviour
     {
         Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value;
         Cursor.lockState = CursorLockMode.Locked;
+
+        cam = GetComponent<Camera>();
     }
 
     void Start()
@@ -39,6 +45,14 @@ public class CameraController : MonoBehaviour
 
         GetInput();
         Rotate();
+
+        float targetFOV;
+
+        if (Input.GetMouseButton(1)) targetFOV = 30f;
+        else targetFOV = 60f;
+
+        FOV = Mathf.Lerp(FOV, targetFOV, 3f * Time.deltaTime);
+        cam.fieldOfView = FOV;
     }
 
     void LateUpdate()
