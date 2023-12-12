@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0f0cbc000a2e044587925daa6849c3f, type: 3}
-  m_Name: Inside
+  m_Name: Fortune Teller
   m_EditorClassIdentifier: 
-  <objectiveName>k__BackingField: Find Your Friend
+  <objectiveName>k__BackingField: Repair The Fortune Teller
   <tasks>k__BackingField:
+  - <requiredCompletion>k__BackingField: 4
+    <taskName>k__BackingField: Find And Insert Cogs
   - <requiredCompletion>k__BackingField: 1
-    <taskName>k__BackingField: Investigate
-  - <requiredCompletion>k__BackingField: 1
-    <taskName>k__BackingField: Survive
-  - <requiredCompletion>k__BackingField: 1
-    <taskName>k__BackingField: Fish
-  - <requiredCompletion>k__BackingField: 1
-    <taskName>k__BackingField: Find the Key
+    <taskName>k__BackingField: Find And Place The Crystal Ball
   - <requiredCompletion>k__BackingField: 1
     <taskName>k__BackingField: Progress
