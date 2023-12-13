@@ -8,8 +8,6 @@ public class SceneManager : Manager
 
     public void LoadScene(string sceneName)
     {
-        if (sceneName == "Outside_Chase") Application.Quit();
-
         StartCoroutine(LoadSceneCor(sceneName));
     }
 

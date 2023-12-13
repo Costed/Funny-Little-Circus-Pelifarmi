@@ -65,13 +65,15 @@ public class InteractionController : MonoBehaviour
     }
 
 
-    void Awake()
-    {
-        CommandSystem.AddCommand(new DebugCommand<int>("AddItem", (itemID) => GameManager.Singleton.ItemManager.AddItem(itemID)));
-    }
-
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameData.Paused) GameManager.Singleton.UnPause();
+            else GameManager.Singleton.Pause();
+        }
+
+
         if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)) holdingInteract = true;
         else if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0)) holdingInteract = false;
 

@@ -1,8 +1,9 @@
-using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine;
 
 public class SoundManager : Manager
 {
+    [SerializeField] AudioMixerGroup defaultMixerGroup;
     [SerializeField] float pitchDeviation = 0.1f;
 
     const int POOLSIZE = 10;
@@ -10,6 +11,21 @@ public class SoundManager : Manager
     AudioSource[] soundSources = new AudioSource[POOLSIZE];
 
     int audioIndex;
+
+
+    void OnEnable()
+    {
+        GameData.Settings.OnSettingsChanged += RefreshVolume;
+    }
+    void OnDisable()
+    {
+        GameData.Settings.OnSettingsChanged -= RefreshVolume;
+    }
+
+    void RefreshVolume()
+    {
+        defaultMixerGroup.audioMixer.SetFloat("Master Volume", GameData.Settings.Volume);
+    }
 
 
     public override void Init()
@@ -34,7 +50,8 @@ public class SoundManager : Manager
         source.pitch = GetPitch();
         source.volume = volume;
         source.spatialBlend = spatialBlend;
-        if (mixerGroup != null) source.outputAudioMixerGroup = mixerGroup;
+        if (mixerGroup) source.outputAudioMixerGroup = mixerGroup;
+        else if (defaultMixerGroup) source.outputAudioMixerGroup = defaultMixerGroup;
 
         source.Play();
 

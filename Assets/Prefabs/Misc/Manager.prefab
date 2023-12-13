@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d982d2e052089479b87d1c8b6f5812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultMixerGroup: {fileID: 24300002, guid: 2d45214006803c44cb0eec5cae572a4f, type: 2}
   pitchDeviation: 0.1
 --- !u!114 &3061928094754350820
 MonoBehaviour:
@@ -111,6 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  sensitivitySetting: {fileID: 0}
+  volumeSetting: {fileID: 0}
 --- !u!114 &9072078229316656060
 MonoBehaviour:
   m_ObjectHideFlags: 0

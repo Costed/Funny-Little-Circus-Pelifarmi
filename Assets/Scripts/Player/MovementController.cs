@@ -48,7 +48,7 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
-        if (!cc.enabled) return;
+        if (!cc.enabled || GameData.Paused) return;
 
         if (Input.GetKeyDown(KeyCode.T))
         {

@@ -1,10 +1,20 @@
 using UnityEngine;
+using System;
 
 public static class GameData
 {
+    public static event Action<bool> OnPauseStateChanged;
+    public static bool Paused;
+
     public static PlayerData Player = new PlayerData();
     public static ControlsData Controls = new ControlsData();
-    //public static SettingsData Settings = new SettingsData();
+    public static SettingsData Settings = new SettingsData();
+
+    public static void ChangePauseState(bool state)
+    {
+        Paused = state;
+        OnPauseStateChanged?.Invoke(Paused);
+    }
 }
 
 public class PlayerData
@@ -26,7 +36,15 @@ public class PlayerData
 
 public class SettingsData
 {
-    
+    public event Action OnSettingsChanged;
+
+    public int Volume { get; private set; }
+
+    public void SetVolume(int volume)
+    {
+        Volume = volume;
+        OnSettingsChanged?.Invoke();
+    }
 }
 
 public class ControlsData

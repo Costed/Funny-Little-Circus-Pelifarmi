@@ -1,7 +1,12 @@
 using System.Collections.Generic;
+using HietakissaUtils.Commands;
+using UnityEditor;
 using UnityEngine;
 using System;
 
+#if UNITY_EDITOR
+[InitializeOnLoad]
+#endif
 public class GameManager : MonoBehaviour
 {
     public static GameManager Singleton;
@@ -24,6 +29,12 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Singleton = this;
+
+        CommandSystem.AddCommand(new DebugCommand<int>("AddItem", (itemID) => GameManager.Singleton.ItemManager.AddItem(itemID)));
+        CommandSystem.AddCommand(new DebugCommand<bool>("Pause", (state) => {
+            if (state) Pause();
+            else UnPause();
+        }));
 
         foreach (Manager manager in managers) manager.Init();
         foreach (Manager manager in managers) manager.LateInit();
@@ -69,6 +80,31 @@ public class GameManager : MonoBehaviour
             OnLoadCheckpoint?.Invoke();
         }
     }
+
+    public void Pause()
+    {
+        Time.timeScale = float.Epsilon;
+        GameData.ChangePauseState(true);
+    }
+
+    public void UnPause()
+    {
+        Time.timeScale = 1f;
+        GameData.ChangePauseState(false);
+    }
+
+#if UNITY_EDITOR
+    static GameManager()
+    {
+        EditorApplication.playModeStateChanged += (context) =>
+        {
+            if (context == PlayModeStateChange.EnteredEditMode)
+            {
+                GameData.ChangePauseState(false);
+            }
+        };
+    }
+#endif
 }
 
 public abstract class Manager : MonoBehaviour

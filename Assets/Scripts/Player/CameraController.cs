@@ -41,7 +41,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (!enabled) return;
+        if (!enabled || GameData.Paused) return;
 
         GetInput();
         Rotate();
@@ -51,7 +51,7 @@ public class CameraController : MonoBehaviour
         if (Input.GetMouseButton(1)) targetFOV = 30f;
         else targetFOV = 60f;
 
-        FOV = Mathf.Lerp(FOV, targetFOV, 3f * Time.deltaTime);
+        FOV = Mathf.Lerp(FOV, targetFOV, 5f * Time.deltaTime);
         cam.fieldOfView = FOV;
     }
 
