@@ -1,6 +1,5 @@
 using UnityEngine.UI;
 using UnityEngine;
-using HietakissaUtils.Commands;
 
 public class InteractionController : MonoBehaviour
 {
