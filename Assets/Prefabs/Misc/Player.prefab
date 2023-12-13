@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultClips:
-  - {fileID: 8300000, guid: 0a2df6244199c884996d85cedb4d1409, type: 3}
+  - {fileID: 8300000, guid: 8a14a2c206187b04780f59600881b53f, type: 3}
   footstepTypes:
   - surface: Box
     footstepSounds:
