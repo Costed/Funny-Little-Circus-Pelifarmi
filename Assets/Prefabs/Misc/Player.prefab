@@ -266,9 +266,9 @@ MonoBehaviour:
   defaultClips:
   - {fileID: 8300000, guid: 8a14a2c206187b04780f59600881b53f, type: 3}
   footstepTypes:
-  - surface: Box
+  - surface: Grass
     footstepSounds:
-    - {fileID: 8300000, guid: c4b2822f5eab6df40b3e6f79943cc26c, type: 3}
+    - {fileID: 8300000, guid: 6e6d3172cf4e92848913fdc8cfea069c, type: 3}
   distancePerStep: 2
 --- !u!1001 &1363788603553428249
 PrefabInstance:
