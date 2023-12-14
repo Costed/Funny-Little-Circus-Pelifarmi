@@ -24,9 +24,13 @@ public class Clown : MonoBehaviour
 
     bool oldHasPath;
 
+    Animator anim;
+
 
     void Awake()
     {
+        anim = GetComponent<Animator>();
+
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
 
@@ -49,8 +53,6 @@ public class Clown : MonoBehaviour
 
         bool hasPath = agent.hasPath;
 
-        
-
         if (hasPath == oldHasPath)
         {
             if (hasPath) timeShutOff = 0f;
@@ -60,7 +62,6 @@ public class Clown : MonoBehaviour
 
         NavMeshPath path = new NavMeshPath();
         agent.CalculatePath(playerTransform.position, path);
-        Debug.Log($"{timeShutOff}, {Vector3.Distance(playerTransform.position, path.corners[^1]) < 0.2f}");
 
         if (Vector3.Distance(transform.position, playerTransform.position) <= catchRange) CatchPlayer();
 
@@ -79,6 +80,8 @@ public class Clown : MonoBehaviour
     {
         agent.enabled = true;
         chasing = true;
+
+        anim.SetTrigger("ChaseStart");
     }
 
     [ContextMenu("End Chase")]
@@ -90,6 +93,7 @@ public class Clown : MonoBehaviour
         //transform.position = startPos;
         //transform.rotation = startRot;
 
+        anim.SetTrigger("ChaseEnd");
         StartCoroutine(EndChaseCor());
     }
 
@@ -113,6 +117,18 @@ public class Clown : MonoBehaviour
 
         transform.position = startPos;
         transform.rotation = startRot;
+    }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Clown trigger");
+
+        if (other.CompareTag("Clown"))
+        {
+            Debug.Log("Clown crouch");
+            anim.SetTrigger("Crouch");
+        }
     }
 
 
