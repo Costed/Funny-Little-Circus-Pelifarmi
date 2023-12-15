@@ -76,6 +76,13 @@ public class InteractionController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)) holdingInteract = true;
         else if (Input.GetKeyUp(KeyCode.E) || Input.GetMouseButtonUp(0)) holdingInteract = false;
 
+        if (holdingInteract && GameData.DisplayingItem)
+        {
+            GameManager.Singleton.UIManager.StopDisplayItem();
+            holdingInteract = false;
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
         {
             if (hasRod && hasDuck)
