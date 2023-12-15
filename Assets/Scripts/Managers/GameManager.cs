@@ -44,10 +44,19 @@ public class GameManager : MonoBehaviour
         foreach (Manager manager in managers) manager.LateInit();
     }
 
+    void Start()
+    {
+        foreach (KeyValuePair<Transform, bool> kvp in tempStates)
+        {
+            savedStates[kvp.Key] = kvp.Value;
+        }
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.L)) LoadCheckpoint();
     }
+
 
     public bool SetCheckpoint(CheckpointSO checkpoint)
     {
@@ -67,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadCheckpoint()
     {
+        UIManager.StopDisplayItem();
         StartCoroutine(LoadCheckpointCor());
     }
 
