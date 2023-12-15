@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using HietakissaUtils.Commands;
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using System;
@@ -25,6 +26,9 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<Transform, bool> tempStates = new Dictionary<Transform, bool>();
     public Dictionary<Transform, bool> savedStates = new Dictionary<Transform, bool>();
+
+    [SerializeField] Animator jumpscareClownAnimator;
+
 
     void Awake()
     {
@@ -63,9 +67,29 @@ public class GameManager : MonoBehaviour
 
     public void LoadCheckpoint()
     {
+        StartCoroutine(LoadCheckpointCor());
+    }
+
+    IEnumerator LoadCheckpointCor()
+    {
+        GameData.Player.Camera.Disable();
+        GameData.Player.Movement.Disable();
+
+        jumpscareClownAnimator.gameObject.SetActive(true);
+        jumpscareClownAnimator.SetTrigger("Jumpscare");
+        yield return new WaitForSeconds(0.8f);
+
+        UIManager.EnterTransition();
+        yield return new WaitForSeconds(1f);
+        jumpscareClownAnimator.SetTrigger("JumpscareEnd");
+        jumpscareClownAnimator.gameObject.SetActive(false);
+
+
         if (currentCheckpoint != null)
         {
             GameData.Player.Movement.Teleport(currentCheckpoint.GetPlayerSpawnPos());
+            GameData.Player.Camera.Enable();
+            GameData.Player.Camera.Disable();
 
             Vector3 rot = currentCheckpoint.GetPlayerRotation();
             GameData.Player.Camera.SetRotations(rot.x, rot.y);
@@ -79,6 +103,13 @@ public class GameManager : MonoBehaviour
 
             OnLoadCheckpoint?.Invoke();
         }
+        Debug.Log("Set player pos");
+
+
+        UIManager.ExitTransition();
+        yield return new WaitForSeconds(0.75f);
+        GameData.Player.Camera.Enable();
+        GameData.Player.Movement.Enable();
     }
 
     public void Pause()

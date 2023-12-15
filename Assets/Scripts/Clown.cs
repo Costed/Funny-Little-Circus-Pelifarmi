@@ -1,12 +1,14 @@
+using System.Collections;
 using UnityEngine.AI;
 using UnityEngine;
-using System.Collections;
 
 [SelectionBase]
 public class Clown : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float catchRange;
+
+    [SerializeField] GameObject visual;
 
     [SerializeField] bool drawGizmos;
     
@@ -19,10 +21,6 @@ public class Clown : MonoBehaviour
 
     const float maxChaseEndTime = 5f;
     float chaseEndTime;
-
-    float timeShutOff;
-
-    bool oldHasPath;
 
     Animator anim;
 
@@ -42,7 +40,7 @@ public class Clown : MonoBehaviour
     {
         playerTransform = GameData.Player.Transform;
 
-        GameManager.Singleton.OnLoadCheckpoint += () => EndChase();
+        //GameManager.Singleton.OnLoadCheckpoint += () => EndChase();
     }
 
     void Update()
@@ -51,27 +49,13 @@ public class Clown : MonoBehaviour
 
         agent.SetDestination(playerTransform.position);
 
-        bool hasPath = agent.hasPath;
-
-        if (hasPath == oldHasPath)
-        {
-            if (hasPath) timeShutOff = 0f;
-            else timeShutOff += Time.deltaTime;
-        }
-
-
-        NavMeshPath path = new NavMeshPath();
-        agent.CalculatePath(playerTransform.position, path);
-
         if (Vector3.Distance(transform.position, playerTransform.position) <= catchRange) CatchPlayer();
-
-        oldHasPath = hasPath;
     }
 
 
     void CatchPlayer()
     {
-        if (chasing) EndChase();
+        if (chasing) EndChase(true);
         GameManager.Singleton.LoadCheckpoint();
     }
 
@@ -85,7 +69,7 @@ public class Clown : MonoBehaviour
     }
 
     [ContextMenu("End Chase")]
-    public void EndChase()
+    public void EndChase(bool catched = false)
     {
         //agent.enabled = false;
         //chasing = false;
@@ -93,30 +77,48 @@ public class Clown : MonoBehaviour
         //transform.position = startPos;
         //transform.rotation = startRot;
 
+        Debug.Log("End chase");
+
         anim.SetTrigger("ChaseEnd");
-        StartCoroutine(EndChaseCor());
+        StartCoroutine(EndChaseCor(catched));
     }
 
-    IEnumerator EndChaseCor()
+    IEnumerator EndChaseCor(bool catched)
     {
         chasing = false;
 
-        agent.destination = startPos;
-        agent.speed = speed * 2.5f;
-
-        while (Vector3.Distance(transform.position, startPos) > 0.3f)
+        if (catched)
         {
-            chaseEndTime += Time.deltaTime;
-            if (chaseEndTime >= maxChaseEndTime) break;
+            visual.SetActive(false);
 
-            yield return null;
+            agent.speed = speed;
+            agent.enabled = false;
+
+            transform.position = startPos;
+            transform.rotation = startRot;
+
+            yield return new WaitForSeconds(2f);
+            visual.SetActive(true);
         }
+        else
+        {
+            agent.destination = startPos;
+            agent.speed = speed * 2.5f;
 
-        agent.enabled = false;
-        agent.speed = speed;
+            while (Vector3.Distance(transform.position, startPos) > 0.3f)
+            {
+                chaseEndTime += Time.deltaTime;
+                if (chaseEndTime >= maxChaseEndTime) break;
 
-        transform.position = startPos;
-        transform.rotation = startRot;
+                yield return null;
+            }
+
+            agent.speed = speed;
+            agent.enabled = false;
+
+            transform.position = startPos;
+            transform.rotation = startRot;
+        }
     }
 
 

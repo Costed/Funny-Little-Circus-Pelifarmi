@@ -228,9 +228,11 @@ public class MovementController : MonoBehaviour
 
     public void Teleport(Vector3 position)
     {
+        bool enabled = cc.enabled;
+
         cc.enabled = false;
         transform.position = position;
-        cc.enabled = true;
+        cc.enabled = enabled;
     }
 
 
