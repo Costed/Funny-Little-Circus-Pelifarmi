@@ -8,6 +8,7 @@ public class SceneManager : Manager
 
     public void LoadScene(string sceneName)
     {
+        GameManager.Singleton.UIManager.StopDisplayItem();
         StartCoroutine(LoadSceneCor(sceneName));
     }
 

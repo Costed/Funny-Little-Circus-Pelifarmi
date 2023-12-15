@@ -8,10 +8,14 @@ public class StateRecorder
     Transform transform;
     bool stateValue;
 
+    //bool defaultValue;
+
+
     public StateRecorder(Transform transform, bool defaultValue = false)
     {
         GameManager.Singleton.OnLoadCheckpoint += LoadState;
         this.transform = transform;
+        //this.defaultValue = defaultValue;
 
         RecordState(defaultValue);
     }
@@ -28,5 +32,6 @@ public class StateRecorder
             stateValue = loadValue;
             OnStateLoad(stateValue);
         }
+        //else if (stateValue != defaultValue) OnStateLoad(stateValue);
     }
 }

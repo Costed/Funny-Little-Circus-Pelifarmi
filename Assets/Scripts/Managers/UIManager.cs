@@ -12,6 +12,9 @@ public class UIManager : Manager
     [SerializeField] bool openMenuOnAwake;
     Menu[] menus;
 
+    [SerializeField] GameObject[] itemDisplays;
+
+
     void Awake()
     {
         ExitTransition();
@@ -24,6 +27,8 @@ public class UIManager : Manager
             if (openMenuOnAwake) OpenMenu(menus[0].GetMenuName);
             else OpenMenu("Null");
         }
+
+        StopDisplayItem();
     }
 
     void OnEnable()
@@ -110,5 +115,29 @@ public class UIManager : Manager
     public void ExitTransition()
     {
         anim.Play("ExitTransition");
+    }
+
+
+    public void DisplayItem(int ID)
+    {
+        GameData.Player.Camera.Disable();
+        GameData.Player.Movement.Disable();
+        GameData.DisplayingItem = true;
+
+        for (int i = 0; i < itemDisplays.Length; i++)
+        {
+            itemDisplays[i].SetActive(i == ID);
+        }
+    }
+    public void StopDisplayItem()
+    {
+        GameData.Player.Camera.Enable();
+        GameData.Player.Movement.Enable();
+        GameData.DisplayingItem = false;
+
+        for (int i = 0; i < itemDisplays.Length; i++)
+        {
+            itemDisplays[i].SetActive(false);
+        }
     }
 }

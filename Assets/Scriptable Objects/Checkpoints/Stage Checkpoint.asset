@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d35d3f99a658a4899f26fe1810e957, type: 3}
   m_Name: Stage Checkpoint
   m_EditorClassIdentifier: 
-  position: {x: -2.8700004, y: -0.23234314, z: 15}
+  position: {x: -2.8700004, y: 0.345, z: 15}
   rotation: {x: 0, y: 180, z: 0}

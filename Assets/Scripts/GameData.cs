@@ -5,6 +5,7 @@ public static class GameData
 {
     public static event Action<bool> OnPauseStateChanged;
     public static bool Paused;
+    public static bool DisplayingItem;
 
     public static PlayerData Player = new PlayerData();
     public static ControlsData Controls = new ControlsData();
