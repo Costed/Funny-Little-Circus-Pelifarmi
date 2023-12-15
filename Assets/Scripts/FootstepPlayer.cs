@@ -24,6 +24,8 @@ public class FootstepPlayer : MonoBehaviour
         {
             stepsForSurface[step.surface] = step.footstepSounds;
         }
+
+        oldPos = transform.position;
     }
 
     void Update()

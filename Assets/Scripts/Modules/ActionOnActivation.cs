@@ -18,7 +18,7 @@ public abstract class ActionOnActivation : MonoBehaviour
     {
         if (activatables != null)
         {
-            foreach (IActivatable activatable in activatables) activatable.OnActivate += Activated;
+            foreach (IActivatable activatable in activatables) activatable.OnActivate -= Activated;
         }
 
         //if (activatable != null) activatable.OnActivate -= Activated;
