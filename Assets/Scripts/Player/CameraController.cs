@@ -114,6 +114,7 @@ public class CameraController : MonoBehaviour
     {
         enabled = true;
 
+        if (!holder) return;
         transform.position = holder.position;
         transform.rotation = holder.rotation;
     }

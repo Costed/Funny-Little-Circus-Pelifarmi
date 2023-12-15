@@ -120,7 +120,7 @@ public class UIManager : Manager
 
     public void DisplayItem(int ID)
     {
-        if (GameData.Player.Camera && GameData.Player.Movement)
+        if (GameData.Player.Camera != null && GameData.Player.Movement != null)
         {
             GameData.Player.Camera.Disable();
             GameData.Player.Movement.Disable();
@@ -135,7 +135,7 @@ public class UIManager : Manager
     }
     public void StopDisplayItem()
     {
-        if (GameData.Player.Camera && GameData.Player.Movement)
+        if (GameData.Player.Camera != null && GameData.Player.Movement != null)
         {
             GameData.Player.Camera.Enable();
             GameData.Player.Movement.Enable();

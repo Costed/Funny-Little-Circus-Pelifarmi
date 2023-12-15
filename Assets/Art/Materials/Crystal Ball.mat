@@ -29,7 +29,7 @@ Material:
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -56,7 +56,8 @@ Material:
     - _IORMedium: 1.85
     - _IORSource: 0.48
     - _Max: 1
-    - _Min: 0
+    - _Metallic: 1
+    - _Min: 0.346
     - _Power: 1.77
     - _QueueControl: 0
     - _QueueOffset: 0

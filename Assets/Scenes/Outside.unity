@@ -3976,6 +3976,16 @@ PrefabInstance:
       propertyPath: sensitivitySetting
       value: 
       objectReference: {fileID: 377447658}
+    - target: {fileID: 1415934155375810320, guid: 91f8ad86e9679e54facc7dd47cd65394,
+        type: 3}
+      propertyPath: itemDisplays.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415934155375810320, guid: 91f8ad86e9679e54facc7dd47cd65394,
+        type: 3}
+      propertyPath: itemDisplays.Array.data[0]
+      value: 
+      objectReference: {fileID: 1529611597}
     - target: {fileID: 2501493044566714841, guid: 91f8ad86e9679e54facc7dd47cd65394,
         type: 3}
       propertyPath: m_IsActive
@@ -5428,6 +5438,12 @@ Mesh:
 --- !u!224 &1488985290 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3501593911648721780, guid: 8273130b17365c645833f62cfd153db5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1709686645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1529611597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8798658876172861171, guid: 8273130b17365c645833f62cfd153db5,
     type: 3}
   m_PrefabInstance: {fileID: 1709686645}
   m_PrefabAsset: {fileID: 0}
