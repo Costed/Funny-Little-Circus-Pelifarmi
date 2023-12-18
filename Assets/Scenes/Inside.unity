@@ -25671,7 +25671,8 @@ MonoBehaviour:
   - <clip>k__BackingField: {fileID: 8300000, guid: 0a2df6244199c884996d85cedb4d1409,
       type: 3}
     <volume>k__BackingField: 0.3
-  - <clip>k__BackingField: {fileID: 0}
+  - <clip>k__BackingField: {fileID: 8300000, guid: 79fb1c1577e5d41448385da53c2ccc8e,
+      type: 3}
     <volume>k__BackingField: 0.3
   - <clip>k__BackingField: {fileID: 8300000, guid: 32901976a0425e7418fb47ee32c36184,
       type: 3}
@@ -25679,8 +25680,17 @@ MonoBehaviour:
   - <clip>k__BackingField: {fileID: 8300000, guid: 31cd5965a6d7ded48af0629dda64fe11,
       type: 3}
     <volume>k__BackingField: 0.3
+  - <clip>k__BackingField: {fileID: 8300000, guid: 1ade766619201624ca851fbf1da0cff5,
+      type: 3}
+    <volume>k__BackingField: 0.3
+  - <clip>k__BackingField: {fileID: 8300000, guid: a14eb56c611367f46b2b358072567e99,
+      type: 3}
+    <volume>k__BackingField: 0.3
+  - <clip>k__BackingField: {fileID: 8300000, guid: 165272e1424c8c04c90d956bab9f0d55,
+      type: 3}
+    <volume>k__BackingField: 0.3
   minDelay: 5
-  maxDelay: 10
+  maxDelay: 15
 --- !u!1 &1305919143
 GameObject:
   m_ObjectHideFlags: 0

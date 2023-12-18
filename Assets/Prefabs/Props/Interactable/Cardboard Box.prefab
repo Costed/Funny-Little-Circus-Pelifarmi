@@ -200,6 +200,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1750848294741559221}
+    - targetCorrespondingSourceObject: {fileID: 8379761148179287208, guid: 358260604cca3894287244b8f04e0760,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8711558461756663555}
     - targetCorrespondingSourceObject: {fileID: 2434454498305362795, guid: 358260604cca3894287244b8f04e0760,
         type: 3}
       insertIndex: -1
@@ -577,6 +581,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   defaultState: 0
+--- !u!114 &8711558461756663555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115318711997558758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 2d45214006803c44cb0eec5cae572a4f, type: 2}
+  soundEffects:
+  - {fileID: 8300000, guid: e5542a1841996fd46bd2dc144a56903e, type: 3}
+  blend2D3D: 1
+  volume: 0.8
 --- !u!4 &5599825814263018844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9151654128851146258, guid: 358260604cca3894287244b8f04e0760,
