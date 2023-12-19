@@ -34,6 +34,7 @@ public class Clown : MonoBehaviour
         anim = GetComponent<Animator>();
         chaseMusicSource = GetComponent<AudioSource>();
         chaseVolume = chaseMusicSource.volume;
+        chaseMusicSource.volume = 0f;
 
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;

@@ -31,8 +31,17 @@ public class UIManager : Manager
         if (itemDisplays.Length > 1) DisplayItem(1);
         //StopDisplayItem();
 
-        sensitivitySetting.ValueChanged(1f);
-        volumeSetting.ValueChanged(50f);
+        
+    }
+
+    void Start()
+    {
+        if (!GameData.Settings.Set)
+        {
+            sensitivitySetting.ValueChanged(1f);
+            volumeSetting.ValueChanged(63f);
+            GameData.Settings.Set = true;
+        }
     }
 
     void OnEnable()

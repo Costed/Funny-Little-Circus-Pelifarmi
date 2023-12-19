@@ -38,6 +38,8 @@ public class PlayerData
 public class SettingsData
 {
     public event Action OnSettingsChanged;
+    public bool Set;
+
 
     public int MasterSoundVolume { get; private set; }
 
