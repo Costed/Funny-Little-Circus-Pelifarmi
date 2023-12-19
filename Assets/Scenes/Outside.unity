@@ -6593,29 +6593,29 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1846817046
+--- !u!1 &1863299172 stripped
 GameObject:
+  m_CorrespondingSourceObject: {fileID: 5453926061662007020, guid: ec736d1d6205a3d42b59bbd18c3be8ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 7352887903046471431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1863299181
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1846817047}
-  - component: {fileID: 1846817050}
-  - component: {fileID: 1846817049}
-  - component: {fileID: 1846817048}
-  m_Layer: 9
-  m_Name: Quad
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1846817047
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_GameObject: {fileID: 1863299172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 2d45214006803c44cb0eec5cae572a4f, type: 2}
+  soundEffects:
+  - {fileID: 8300000, guid: ede0cd40eed398644b23eeb1bcff1822, type: 3}
+  blend2D3D: 1
+  volume: 1
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846817046}
@@ -8386,6 +8386,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 258771452}
+    - targetCorrespondingSourceObject: {fileID: 5453926061662007020, guid: ec736d1d6205a3d42b59bbd18c3be8ff,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1863299181}
   m_SourcePrefab: {fileID: 100100000, guid: ec736d1d6205a3d42b59bbd18c3be8ff, type: 3}
 --- !u!4 &7352887903046471432 stripped
 Transform:
