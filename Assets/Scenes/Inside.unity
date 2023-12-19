@@ -5321,6 +5321,10 @@ MonoBehaviour:
     - {fileID: 4049055310031086926, guid: 10f0ba49b37b7d54b83a4f61f05ede92, type: 3}
     - {fileID: 5457958983867468974, guid: 9fa7e5e4bebc2c1419801056ab587564, type: 3}
     <maxCount>k__BackingField: 15
+  - collectionName: Teddies
+    <props>k__BackingField:
+    - {fileID: 5457958983867468974, guid: 9fa7e5e4bebc2c1419801056ab587564, type: 3}
+    <maxCount>k__BackingField: 4
   junkSpawnPos: {fileID: 1674976937}
   interactionActivator: {fileID: 200564552}
 --- !u!114 &200564552
@@ -17503,11 +17507,11 @@ Transform:
   m_GameObject: {fileID: 874146889}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002, y: -0.0204, z: 0.346}
+  m_LocalPosition: {x: 0.0020003468, y: -0.020400047, z: 0.34600002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6464228984502447095}
+  m_Father: {fileID: 798667504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!215 &874146891
 ReflectionProbe:
@@ -49452,7 +49456,12 @@ PrefabInstance:
     - target: {fileID: 3698261793395890137, guid: 85d33c0f3351603469b77b3cfe4b38ce,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698261793395890137, guid: 85d33c0f3351603469b77b3cfe4b38ce,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3734810386664764951, guid: 85d33c0f3351603469b77b3cfe4b38ce,
         type: 3}
@@ -49676,12 +49685,12 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8471734685467259090, guid: 85d33c0f3351603469b77b3cfe4b38ce,
         type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 874146890}
+    - targetCorrespondingSourceObject: {fileID: 8471734685467259090, guid: 85d33c0f3351603469b77b3cfe4b38ce,
+        type: 3}
       insertIndex: -1
       addedObject: {fileID: 1916082281}
-    - targetCorrespondingSourceObject: {fileID: 8952515966690685191, guid: 85d33c0f3351603469b77b3cfe4b38ce,
-        type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 874146890}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4065820779120422674, guid: 85d33c0f3351603469b77b3cfe4b38ce,
         type: 3}
@@ -49732,12 +49741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a4c838a929f174e8282d7e4c019e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &6464228984502447095 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8952515966690685191, guid: 85d33c0f3351603469b77b3cfe4b38ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 6464228984502447093}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6464228984502447101
 MonoBehaviour:
   m_ObjectHideFlags: 0

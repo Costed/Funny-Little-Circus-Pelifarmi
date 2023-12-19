@@ -24,10 +24,16 @@ public class Clown : MonoBehaviour
 
     Animator anim;
 
+    AudioSource chaseMusicSource;
+    float chaseVolume;
+
+
 
     void Awake()
     {
         anim = GetComponent<Animator>();
+        chaseMusicSource = GetComponent<AudioSource>();
+        chaseVolume = chaseMusicSource.volume;
 
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
@@ -62,6 +68,9 @@ public class Clown : MonoBehaviour
     [ContextMenu("Start Chase")]
     public void StartChase()
     {
+        //if (chaseMusicSource) chaseMusicSource.Play();
+        if (chaseMusicSource) LerpChaseVolume(chaseVolume);
+
         agent.enabled = true;
         chasing = true;
 
@@ -76,6 +85,9 @@ public class Clown : MonoBehaviour
         //
         //transform.position = startPos;
         //transform.rotation = startRot;
+
+        //if (chaseMusicSource) chaseMusicSource.Stop();
+        if (chaseMusicSource) LerpChaseVolume(0f);
 
         Debug.Log("End chase");
 
@@ -118,6 +130,21 @@ public class Clown : MonoBehaviour
 
             transform.position = startPos;
             transform.rotation = startRot;
+        }
+    }
+
+    IEnumerator LerpChaseVolume(float targetVolume)
+    {
+        float lerpTime = 0f;
+
+        while (true)
+        {
+            lerpTime += Time.deltaTime * 0.4f;
+            chaseMusicSource.volume = Mathf.Lerp(chaseMusicSource.volume, targetVolume, lerpTime);
+
+            if (lerpTime >= 1f) break;
+
+            yield return null;
         }
     }
 

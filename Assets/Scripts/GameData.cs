@@ -39,11 +39,11 @@ public class SettingsData
 {
     public event Action OnSettingsChanged;
 
-    public int Volume { get; private set; }
+    public int MasterSoundVolume { get; private set; }
 
     public void SetVolume(int volume)
     {
-        Volume = volume;
+        MasterSoundVolume = volume;
         OnSettingsChanged?.Invoke();
     }
 }

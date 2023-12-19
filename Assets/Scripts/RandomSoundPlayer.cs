@@ -32,7 +32,6 @@ public class RandomSoundPlayer : MonoBehaviour
 
     void PlaySound()
     {
-        Debug.Log($"Playing random sound, {delay.RoundToDecimalPlaces(3)}");
         AudioclipWithVolume sound = sounds.RandomElement();
         GameManager.Singleton.SoundManager.PlaySoundEffectAtPosition(transform.position, sound.clip, sound.volume);
     }
