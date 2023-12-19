@@ -24,7 +24,7 @@ public class SoundManager : Manager
 
     void RefreshVolume()
     {
-        defaultMixerGroup.audioMixer.SetFloat("Master Volume", GameData.Settings.Volume);
+        defaultMixerGroup.audioMixer.SetFloat("Master Volume", GameData.Settings.MasterSoundVolume);
     }
 
 

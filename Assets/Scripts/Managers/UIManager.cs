@@ -28,7 +28,11 @@ public class UIManager : Manager
             else OpenMenu("Null");
         }
 
-        StopDisplayItem();
+        if (itemDisplays.Length > 1) DisplayItem(1);
+        //StopDisplayItem();
+
+        sensitivitySetting.ValueChanged(1f);
+        volumeSetting.ValueChanged(50f);
     }
 
     void OnEnable()
