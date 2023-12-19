@@ -4672,6 +4672,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7014708269139273070, guid: 8273130b17365c645833f62cfd153db5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7611792420094373197, guid: 8273130b17365c645833f62cfd153db5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -5315,7 +5320,6 @@ MonoBehaviour:
   - collectionName: Ducks
     <props>k__BackingField:
     - {fileID: 4049055310031086926, guid: 10f0ba49b37b7d54b83a4f61f05ede92, type: 3}
-    - {fileID: 5457958983867468974, guid: 9fa7e5e4bebc2c1419801056ab587564, type: 3}
     <maxCount>k__BackingField: 15
   - collectionName: Teddies
     <props>k__BackingField:
