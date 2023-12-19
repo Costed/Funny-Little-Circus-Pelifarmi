@@ -8,6 +8,7 @@ public class WheelOfFortune : MonoBehaviour
     [SerializeField] Transform junkSpawnPos;
 
     [SerializeField] InteractionActivator interactionActivator;
+    [SerializeField] AudioSource wheelAudio;
 
     Animator anim;
 
@@ -46,6 +47,11 @@ public class WheelOfFortune : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         interactionActivator.SetInteractable(true);
+    }
+
+    public void PlayWinSound()
+    {
+        wheelAudio.Play();
     }
 }
 
