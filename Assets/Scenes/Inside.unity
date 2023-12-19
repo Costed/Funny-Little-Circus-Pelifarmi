@@ -27155,7 +27155,7 @@ MonoBehaviour:
   sounds:
   - <clip>k__BackingField: {fileID: 8300000, guid: 296baf919b9ca4f4291c0e885b600525,
       type: 3}
-    <volume>k__BackingField: 0.3
+    <volume>k__BackingField: 0.5
   - <clip>k__BackingField: {fileID: 8300000, guid: 7ff8e5131a85c9841a9ff404b3d95b54,
       type: 3}
     <volume>k__BackingField: 0.3
@@ -27165,7 +27165,7 @@ MonoBehaviour:
   - <clip>k__BackingField: {fileID: 8300000, guid: 5d29018876de26742a26a10e72b13b41,
       type: 3}
     <volume>k__BackingField: 0.3
-  - <clip>k__BackingField: {fileID: 8300000, guid: 0a2df6244199c884996d85cedb4d1409,
+  - <clip>k__BackingField: {fileID: 8300000, guid: c4b2822f5eab6df40b3e6f79943cc26c,
       type: 3}
     <volume>k__BackingField: 0.3
   - <clip>k__BackingField: {fileID: 8300000, guid: 79fb1c1577e5d41448385da53c2ccc8e,
@@ -27185,7 +27185,7 @@ MonoBehaviour:
     <volume>k__BackingField: 0.3
   - <clip>k__BackingField: {fileID: 8300000, guid: 165272e1424c8c04c90d956bab9f0d55,
       type: 3}
-    <volume>k__BackingField: 0.3
+    <volume>k__BackingField: 0.5
   minDelay: 5
   maxDelay: 15
 --- !u!1 &1305919143
