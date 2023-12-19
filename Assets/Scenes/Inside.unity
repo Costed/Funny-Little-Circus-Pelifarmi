@@ -5282,10 +5282,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 200564551}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c94b3d178bac23b43b475f05ce375c3b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 200564556}
   m_SourcePrefab: {fileID: 100100000, guid: c94b3d178bac23b43b475f05ce375c3b, type: 3}
 --- !u!1 &200564549 stripped
 GameObject:
@@ -5417,23 +5413,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &200564556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200564549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixerGroup: {fileID: 24300002, guid: 2d45214006803c44cb0eec5cae572a4f, type: 2}
-  soundEffects:
-  - {fileID: 8300000, guid: 8f0df6d888845514096564cd4376d5ec, type: 3}
-  blend2D3D: 1
-  volume: 0.8
 --- !u!1001 &206842254
 PrefabInstance:
   m_ObjectHideFlags: 0
