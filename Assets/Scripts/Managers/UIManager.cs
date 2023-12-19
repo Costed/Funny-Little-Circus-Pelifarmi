@@ -39,7 +39,7 @@ public class UIManager : Manager
         if (!GameData.Settings.Set)
         {
             sensitivitySetting.ValueChanged(1f);
-            volumeSetting.ValueChanged(63f);
+            volumeSetting.ValueChanged(70f);
             GameData.Settings.Set = true;
         }
     }

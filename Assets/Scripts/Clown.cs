@@ -70,7 +70,8 @@ public class Clown : MonoBehaviour
     public void StartChase()
     {
         //if (chaseMusicSource) chaseMusicSource.Play();
-        if (chaseMusicSource) LerpChaseVolume(chaseVolume);
+        Debug.Log("Started chase");
+        if (chaseMusicSource) StartCoroutine(LerpChaseVolumeCor(chaseVolume));
 
         agent.enabled = true;
         chasing = true;
@@ -88,7 +89,7 @@ public class Clown : MonoBehaviour
         //transform.rotation = startRot;
 
         //if (chaseMusicSource) chaseMusicSource.Stop();
-        if (chaseMusicSource) LerpChaseVolume(0f);
+        if (chaseMusicSource) StartCoroutine(LerpChaseVolumeCor(0f));
 
         Debug.Log("End chase");
 
@@ -134,13 +135,13 @@ public class Clown : MonoBehaviour
         }
     }
 
-    IEnumerator LerpChaseVolume(float targetVolume)
+    IEnumerator LerpChaseVolumeCor(float targetVolume)
     {
         float lerpTime = 0f;
 
         while (true)
         {
-            lerpTime += Time.deltaTime * 0.4f;
+            lerpTime += Time.deltaTime * 0.25f;
             chaseMusicSource.volume = Mathf.Lerp(chaseMusicSource.volume, targetVolume, lerpTime);
 
             if (lerpTime >= 1f) break;
