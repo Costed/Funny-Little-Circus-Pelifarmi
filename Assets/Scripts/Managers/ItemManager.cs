@@ -61,16 +61,16 @@ public class ItemManager : Manager
 
 
     //TEMP DEBUG
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            string inventoryString = "Inventory: ";
-            foreach (int item in tempInventory)
-            {
-                inventoryString += item.ToString() + ", ";
-            }
-            Debug.Log(inventoryString);
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.I))
+    //    {
+    //        string inventoryString = "Inventory: ";
+    //        foreach (int item in tempInventory)
+    //        {
+    //            inventoryString += item.ToString() + ", ";
+    //        }
+    //        Debug.Log(inventoryString);
+    //    }
+    //}
 }

@@ -42,6 +42,11 @@ public class UIManager : Manager
             volumeSetting.ValueChanged(70f);
             GameData.Settings.Set = true;
         }
+        else
+        {
+            sensitivitySetting.ValueChanged(GameData.Controls.Sensitivity);
+            volumeSetting.ValueChanged(GameData.Settings.MasterSoundVolume);
+        }
     }
 
     void OnEnable()

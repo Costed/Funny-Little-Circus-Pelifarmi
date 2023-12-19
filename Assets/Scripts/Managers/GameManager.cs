@@ -52,10 +52,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L)) LoadCheckpoint();
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.L)) LoadCheckpoint();
+    //}
 
 
     public bool SetCheckpoint(CheckpointSO checkpoint)

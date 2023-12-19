@@ -50,10 +50,10 @@ public class MovementController : MonoBehaviour
     {
         if (!cc.enabled || GameData.Paused) return;
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            if (Physics.Raycast(GameData.Player.CameraTransform.position, GameData.Player.CameraTransform.forward, out RaycastHit hit, 100f)) Teleport(hit.point);
-        }
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    if (Physics.Raycast(GameData.Player.CameraTransform.position, GameData.Player.CameraTransform.forward, out RaycastHit hit, 100f)) Teleport(hit.point);
+        //}
 
         //Grounded check
         isGrounded = Physics.SphereCast(transform.position + Vector3.up * (sphereCastRadius + sphereCastOffset), sphereCastRadius, Vector3.down, out sphereCast, sphereCastOffset * 2);

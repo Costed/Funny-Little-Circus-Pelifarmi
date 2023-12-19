@@ -44,7 +44,7 @@ Material:
     - _Noise_Intensity: 40
     - _Pixelization: 324.7
     - _Pixelization_Quality: 800
-    - _Posterization: 400
+    - _Posterization: 500
     - _Quality: 300
     - _ScanSpeed: 1.7
     - _ScanStrength: 0.3
