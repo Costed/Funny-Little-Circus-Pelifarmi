@@ -7,6 +7,5 @@ public class SetRendererForWebGL : MonoBehaviour
     void Awake()
     {
         cam = GetComponent<Camera>();
-        
     }
 }
