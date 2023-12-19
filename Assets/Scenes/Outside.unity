@@ -5820,6 +5820,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 479025770713453454, guid: 8273130b17365c645833f62cfd153db5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 479025770713453454, guid: 8273130b17365c645833f62cfd153db5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 842549921995345252, guid: 8273130b17365c645833f62cfd153db5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 842549921995345252, guid: 8273130b17365c645833f62cfd153db5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 842549921995345252, guid: 8273130b17365c645833f62cfd153db5,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1097518482587462969, guid: 8273130b17365c645833f62cfd153db5,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -5874,6 +5899,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204340928332764058, guid: 8273130b17365c645833f62cfd153db5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204340928332764058, guid: 8273130b17365c645833f62cfd153db5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408737777451323523, guid: 8273130b17365c645833f62cfd153db5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408737777451323523, guid: 8273130b17365c645833f62cfd153db5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408737777451323523, guid: 8273130b17365c645833f62cfd153db5,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1487269427748651368, guid: 8273130b17365c645833f62cfd153db5,
         type: 3}
@@ -6341,6 +6391,29 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1863299172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5453926061662007020, guid: ec736d1d6205a3d42b59bbd18c3be8ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 7352887903046471431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1863299181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863299172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 2d45214006803c44cb0eec5cae572a4f, type: 2}
+  soundEffects:
+  - {fileID: 8300000, guid: ede0cd40eed398644b23eeb1bcff1822, type: 3}
+  blend2D3D: 1
+  volume: 1
 --- !u!1001 &1878123739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7823,6 +7896,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 258771452}
+    - targetCorrespondingSourceObject: {fileID: 5453926061662007020, guid: ec736d1d6205a3d42b59bbd18c3be8ff,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1863299181}
   m_SourcePrefab: {fileID: 100100000, guid: ec736d1d6205a3d42b59bbd18c3be8ff, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

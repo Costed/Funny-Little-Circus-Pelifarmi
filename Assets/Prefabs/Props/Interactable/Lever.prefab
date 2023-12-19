@@ -429,6 +429,7 @@ GameObject:
   - component: {fileID: 5372190549210104537}
   - component: {fileID: 6298477239515549331}
   - component: {fileID: 1425989342627798698}
+  - component: {fileID: 9154800556525983108}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -562,6 +563,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9154800556525983108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6281793653273323317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d2b491b333f1240a879ff3070bfab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 2d45214006803c44cb0eec5cae572a4f, type: 2}
+  soundEffects:
+  - {fileID: 8300000, guid: ba194fcd4cf9a5a4a8217d43d68cfb72, type: 3}
+  blend2D3D: 1
+  volume: 0.8
 --- !u!1 &6326316075985807419
 GameObject:
   m_ObjectHideFlags: 0
