@@ -4339,7 +4339,7 @@ PrefabInstance:
         SPACE
         = Jump
 
-        RIGHT CLICK = zoom
+        RIGHT CLICK = Zoom
 
 '
       objectReference: {fileID: 0}
